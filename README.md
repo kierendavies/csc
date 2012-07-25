@@ -1,4 +1,3 @@
-csc2002s
-========
+# csc
 
-CSC2002S
+CSC2002S and CSC2003S
