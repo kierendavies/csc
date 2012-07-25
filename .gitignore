@@ -1,6 +1,10 @@
+# Java
 *.class
-
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.ear
+
+# LaTeX
+*.aux
+*.log
