@@ -1,0 +1,220 @@
+Question 1 of 20	1.0 Points
+FPS is an acronym for:
+
+A. Free Playstation Sale	
+
+B. Fast Platformer Series	
+
+--> C. First Person Shooter	
+
+D. Flashy Pollished StreetCar	Reset Selection
+
+
+Question 2 of 20	1.0 Points
+In which year did the big crash take place in the Computer Games industry?
+
+--> A. 1983	
+
+B. 2008	
+
+C. 1990	
+
+D. 1936	Reset Selection
+
+
+Question 3 of 20	1.0 Points
+Genre classification includes aspects such as platform and input device.
+ True
+--> False
+Reset Selection
+
+
+Question 4 of 20	1.0 Points
+Which of these is NOT an adventure game?
+
+A. Secret of Monkey Island	
+
+B. Collosal Cave Adventure	
+
+C. Myst	
+
+--> D. Sneak King	Reset Selection
+
+
+Question 5 of 20	1.0 Points
+Which of these game engine components usually requires the highest update rate?
+
+A. Scripting	
+
+B. Rendering	
+
+--> C. Physics	
+
+D. Artificial Intelligence	Reset Selection
+
+
+Question 6 of 20	1.0 Points
+Which games company has a reputation for exploiting its workforce?
+
+xA. Activision	
+
+B. Electronic Arts	
+
+C. Sony	
+
+D. Nintendo	Reset Selection
+
+
+Question 7 of 20	1.0 Points
+Mario in Donkey Kong is a:
+
+A. Software Engineer	
+
+--> B. Plumber	
+
+C. Electrician	
+
+D. Astronaut	Reset Selection
+
+
+Question 8 of 20	1.0 Points
+Which of these is NOT a genre convention in Fighter games?
+
+A. Special moves	
+
+--> B. Nonlinear hit points	
+
+C. One-on-one combat	
+
+D. No weakening with increased damage	Reset Selection
+
+
+Question 9 of 20	1.0 Points
+A rigger is responsible for connecting a skeleton to the surrounding geometry in an animated character.
+--> True
+ False
+Reset Selection
+
+
+Question 10 of 20	1.0 Points
+Who said: "A delayed game is eventually good, a rushed game is bad forever"?
+
+A. Will Wright	
+
+B. Sid Meier	
+
+--> C. Shigeru Miyamoto	Reset Selection
+
+
+Question 11 of 20	1.0 Points
+In the context of strategy games, '4X' stands for:
+
+A. Examine, Experience, Exercise, Extrapolate	
+
+B. Extreme, Extra, Exceed, Excel	
+
+--> C. Explore, Expand, Exploit, Exterminate	
+
+D. 4 times faster	Reset Selection
+
+
+Question 12 of 20	1.0 Points
+Which of the following is NOT usually controlled by a scripting engine:
+
+A. Proximity Triggers	
+
+B. NPC responses	
+
+--> C. Frame Rate	
+
+D. Starting/Stopping Animations	Reset Selection
+
+
+Question 13 of 20	1.0 Points
+Which game engine component typically requires the GREATEST share of computing resources?
+
+--> A. Rendering	
+
+B. Character Animation	
+
+C. Scripting	
+
+D. Artificial Intelligence	Reset Selection
+
+
+Question 14 of 20	1.0 Points
+Which game engine component typically requires the LEAST share of computing resources?
+
+A. Audio	
+
+B. Rendering	
+
+--> C. Character Animation	
+
+D. Artificial Intelligence	
+
+E. Physics	Reset Selection
+
+
+Question 15 of 20	1.0 Points
+To which game genre does Farmville belong?
+
+A. Stealth	
+
+--> B. Social	
+
+C. RPG	
+
+D. Sports	Reset Selection
+
+
+Question 16 of 20	1.0 Points
+Survival horror is a sub-genre of:
+
+A. Maze	
+
+B. Platformer	
+
+C. RTS	
+
+--> D. Shooter	Reset Selection
+
+
+Question 17 of 20	1.0 Points
+Which game has the famous line: "You are in a twisty maze of passageways, all alike ..."?
+
+A. Legend of Zelda	
+
+--> B. Adventure	
+
+C. Pong	
+
+D. The Hitchhiker's Guide to the Galaxy	Reset Selection
+
+
+Question 18 of 20	1.0 Points
+An update rate of 5-10 Hz is considered real time.
+ True
+-->  False
+Reset Selection
+
+
+Question 19 of 20	1.0 Points
+Which of these is NOT normally regarded as a separate game genre?
+
+A. Adventure	
+
+B. Strategy	
+
+--> C. Mystery	
+
+D. Sports	
+
+E. Casual	Reset Selection
+
+
+Question 20 of 20	1.0 Points
+Motion capture can be used to replace the physics component in a game engine.
+ True
+-->  False
+Reset Selection
