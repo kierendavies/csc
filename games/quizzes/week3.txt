@@ -1,0 +1,124 @@
+Question 1 of 20	1.0 Points
+A beta version of a game
+A. is released before an omega build
+--> B. has all features implemented, but usually contains some bugs
+C. is less feature complete than an alpha build
+
+
+Question 2 of 20	1.0 Points
+For mainstream AAA games, what proportion of the team is made up of programmers?
+A. 100%
+B. 75%
+x C. 50%
+D. 25%
+
+
+Question 3 of 20	1.0 Points
+"If you’re considering a career in games, you need knowledge of multiple fields relevant to game creation."
+--> True
+False
+
+
+Question 4 of 20	1.0 Points
+"Sound is an essential ingredient of modern games."
+--> True
+ False
+
+
+Question 5 of 20	1.0 Points
+"Someone with a PhD in computer science really has no place in a game development company."
+ True
+--> False
+
+
+Question 6 of 20	1.0 Points
+A Technical Design Documents outlines, amongst others:
+A. A list of tasks to be undertaken	
+B. A detailed game design	
+C. Solutions for anticipated technical problems
+[all three --> 0.5/1.0]
+
+Question 7 of 20	1.0 Points
+Indie games are typically developed by studios of
+A. 50-80 people
+--> B. less than 10 people
+
+
+Question 8 of 20	1.0 Points
+"Game programmers will always be welcome in a game development environment as long as they can program well."
+ True
+--> False
+
+
+Question 9 of 20	1.0 Points
+"Indie games follow the full game development process used by big corporates, but don’t include a TDD."
+ True
+--> False
+
+
+Question 10 of 20	1.0 Points
+The Golden Spike principle is
+A. the observation that large golden Spikes are related to game development
+B. a design methodology to ensure that two independently developed versions of software are compatible when developed by separate design teams
+--> C. an observation related to scheduling software deliverables which requires simultaneously working on tasks from both ends of your list of milestones
+
+Question 11 of 20	1.0 Points
+"Adding more people to a project at crunch time will usually save your bacon and allow you to deliver on time!"
+ True
+--> False
+
+
+Question 12 of 20	1.0 Points
+‘sim-ship’ is
+A. a simulation game that incorporates sailing
+--> B. related to game translation and localisation
+
+
+Question 13 of 20	1.0 Points
+The Lead Game Designer usually concerns him/herself with important decisions like whether the game will be on time and on budget.
+ True
+--> False
+
+
+Question 14 of 20	1.0 Points
+In the domain or Quality Assurance, what does WNF stand for?
+--> A. Will Not Fix
+B. Will Never Function
+C. Was Not Fixable
+
+
+Question 15 of 20	1.0 Points
+Games are just programs – any competent programmer can write one!
+ True
+--> False
+
+
+Question 16 of 20	1.0 Points
+A Red Flag "event" is important in Game Development because
+A. it indicates when a Bull market is likely to encourage investors to support your game
+B. signals your readiness to immediately release your game beta to testers
+--> C. it helps the producer manage risks in the game development cycle
+
+
+Question 17 of 20	1.0 Points
+What should the “UI interface designer” produce for a game team?
+[text area]
+["A design for a user interface" --> 0.0/1.0]
+
+
+Question 18 of 20	1.0 Points
+"Comprehensive game testing is not generally considered to be an essential part of game development."
+ True
+--> False
+
+
+Question 19 of 20	1.0 Points
+"The Conceptual Design is essentially a brief summary of the proposed game."
+ True
+--> False
+
+
+Question 20 of 20	1.0 Points
+"A Working Title for a game is always fairly similar to the final published title."
+ True
+--> False

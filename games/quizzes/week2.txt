@@ -56,9 +56,9 @@ D. Artificial Intelligence	Reset Selection
 Question 6 of 20	1.0 Points
 Which games company has a reputation for exploiting its workforce?
 
-xA. Activision	
+A. Activision	
 
-B. Electronic Arts	
+--> B. Electronic Arts	
 
 C. Sony	
 
