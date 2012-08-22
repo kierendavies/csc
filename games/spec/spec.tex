@@ -3,7 +3,7 @@
 \begin{document}
 
 \title{Technical Specification\\
-       \emph{<game title here>}}
+       \emph{Zarmina}}
 \author{Kieren Davies}
 \date {22 August 2012}
 \maketitle
@@ -18,11 +18,11 @@ survival
 
 \section{Story}
 
-The premise of the game will be based around early human colonists on the planet \emph{Gliese 581 g}.  The colonists unexpectedly find this planet to be home to life which rapidly becomes hostile.
-
+The premise of the game will be based around early human colonists on the
+planet \emph{Zarmina}.  The colonists unexpectedly find this planet to be home to life which rapidly becomes hostile.
 Since it is a survival game, the story will not be expanded in detail.
 
-\section{Gameplay and features}
+\section{Gameplay}
 
 The player will begin with 
 
@@ -30,24 +30,34 @@ Enemies will spawn offscreen and move towards the player's structures.  On reach
 
 mineral deposits - must build towards and mine
 
-\subsection{Structure types}
+\subsection{Structures}
 
-There will be numerous types of structures available to the player, but no so many as to create confusion and a very steep learning curve.
+There will be numerous types of structures available to the player, but not so many as to create confusion and a very steep learning curve.
 
-Foundation --- the most basic structure, it serves as a minor protective barrier and a platform on which to build other structures.
+\begin{tabular}{lp{9cm}}
+Name & Description \\ \hline
+Reactor & Provides the \emph{power} resource.  When all power cores are destroyed the game ends. \\
+Foundation & Serves as a minor protective barrier and a platform on which to build other structures. \\
+\end{tabular}
 
-\subsection{Enemy types}
+\subsection{Enemies}
 
 There will be many varied types of enemies which will require different strategies for successful defense.
 
-\subsection{Collision detection}
+\subsection{Resources}
 
-This game will not require significant collision detection.
-
-\subsection{Artificial intelligence}
+power, minerals
 
 \subsection{Endgame}
 
 There will be no win condition.  Instead, the objective will be to survive for as long as possible.  The game will end when all of the player's structures are destroyed.
+
+\section{Technical features}
+
+\subsection{Collision detection}
+
+No sophisticated collision detection will be required.  Testing for when an enemy reaches a structure can be done adequately by thresholding Euclidean distance.  Enemies will elastically avoid each other, eliminating the need for precise collision detection between them.
+
+\subsection{Artificial intelligence}
 
 \end{document}
