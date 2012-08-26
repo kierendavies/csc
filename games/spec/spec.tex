@@ -2,33 +2,29 @@
 
 \begin{document}
 
-\title{Technical Specification\\
-       \emph{Zarmina}}
-\author{Kieren Davies}
+\title{Design \& Technical Specification \\ \vspace{0.5em}
+       \emph{Zarmina} \\ \vspace{1em}
+       \large{Top-down survival shooter/tower defense}}
+\author{Kieren Davies (\textsc{dvskie001})}
 \date {22 August 2012}
 \maketitle
 
 \section{Executive summary}
 
 \section{Style and theme}
-economically oriented
-real time
-base building
-survival
 
-\section{Story}
+\emph{Zarmina} will be a top-down endless survival shooter with strong elements of tower defense and an economic orientation.
 
-The premise of the game will be based around early human colonists on the
-planet \emph{Zarmina}.  The colonists unexpectedly find this planet to be home to life which rapidly becomes hostile.
-Since it is a survival game, the story will not be expanded in detail.
+The game will be set in the near future, with the player as an early human colonist on the
+planet \emph{Zarmina}.  The group of colonists unexpectedly finds this planet to be home to life which rapidly becomes hostile, and the whole group but you has been killed.  The story will not be expanded in detail.
 
 \section{Gameplay}
 
-The player will begin with 
+The player will begin with a character with only a basic weapon, and a single reactor structure to protect.
 
 Enemies will spawn offscreen and move towards the player's structures.  On reaching the structures, the enemies will damage them until they are eventually destroyed.
 
-mineral deposits - must build towards and mine
+The world will contain scattered mineral resources
 
 \subsection{Structures}
 
@@ -59,5 +55,7 @@ There will be no win condition.  Instead, the objective will be to survive for a
 No sophisticated collision detection will be required.  Testing for when an enemy reaches a structure can be done adequately by thresholding Euclidean distance.  Enemies will elastically avoid each other, eliminating the need for precise collision detection between them.
 
 \subsection{Artificial intelligence}
+
+Enemies will use A* pathfinding.
 
 \end{document}
