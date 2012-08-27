@@ -9,3 +9,9 @@
 *.aux
 *.log
 *.swp
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
