@@ -1,15 +1,19 @@
-\documentclass[a4paper,titlepage]{article}
+\documentclass[a4paper]{article}
 
 \begin{document}
 
 \title{Design \& Technical Specification \\ \vspace{0.5em}
        \emph{Zarmina} \\ \vspace{1em}
        \large{Top-down survival shooter/tower defense}}
-\author{Kieren Davies (\textsc{dvskie001})}
-\date {22 August 2012}
+\author{Kieren Davies}
+\date{22 August 2012}
 \maketitle
 
-\section{Executive summary}
+\renewcommand{\abstractname}{Executive summary}
+\begin{abstract}
+\emph{Zarmina} is be a survival shooter combined with tower defense in a futuristic offworld setting.  The objective will be to protect a base as long as possible.  Players will engage with quick reflexes and strategy.
+\end{abstract}
+\newpage
 
 \section{Style and theme}
 
@@ -18,22 +22,27 @@
 The game will be set in the near future, with the player as an early human colonist on the
 planet \emph{Zarmina}.  The group of colonists unexpectedly finds this planet to be home to life which rapidly becomes hostile, and the whole group but you has been killed.  The story will not be expanded in detail.
 
+The graphics will largely consist of stylised pixel art.
+
 \section{Gameplay}
 
-The player will begin with a character with only a basic weapon, and a single reactor structure to protect.
+The player will begin with a character with a basic weapon, and a single reactor structure to protect.  Structures can be built adjacent to existing ones by activating a panel on the relevant side.
 
 Enemies will spawn offscreen and move towards the player's structures.  On reaching the structures, the enemies will damage them until they are eventually destroyed.
 
-The world will contain scattered mineral resources
+The world will contain scattered mineral deposits which can be mined for resources.
 
 \subsection{Structures}
 
-There will be numerous types of structures available to the player, but not so many as to create confusion and a very steep learning curve.
+There will be numerous types of structures available to the player, but not so many as to create confusion and a very steep learning curve.  Here follows a sample of the structures to be available.
 
-\begin{tabular}{lp{9cm}}
-Name & Description \\ \hline
-Reactor & Provides the \emph{power} resource.  When all power cores are destroyed the game ends. \\
+\noindent
+\begin{tabular}{p{2cm}p{9cm}}
+Reactor & Provides power.  When all reactors are destroyed the game ends. \\
 Foundation & Serves as a minor protective barrier and a platform on which to build other structures. \\
+Mine & Built on a deposit, it steadily provides minerals. \\
+Turret & Fires at enemies and damages them. \\
+Cannon & A turret which does more damage.
 \end{tabular}
 
 \subsection{Enemies}
@@ -42,20 +51,30 @@ There will be many varied types of enemies which will require different strategi
 
 \subsection{Resources}
 
-power, minerals
+There will be two types of resources available.
+
+\noindent
+\begin{tabular}{p{2cm}p{9cm}}
+Power & Each reactor provides a constant amount of power, and each structure uses a constant amount.  When there is no power new structures cannot be built. \\
+Minerals & Building a new structure uses a predetermined amount of minerals.
+\end{tabular}
 
 \subsection{Endgame}
 
-There will be no win condition.  Instead, the objective will be to survive for as long as possible.  The game will end when all of the player's structures are destroyed.
+There will be no win condition.  Instead, the objective will be to survive for as long as possible.  The game will end when all of the player's reactors are destroyed.  A score will be recorded on a leaderboard.
 
 \section{Technical features}
 
 \subsection{Collision detection}
 
-No sophisticated collision detection will be required.  Testing for when an enemy reaches a structure can be done adequately by thresholding Euclidean distance.  Enemies will elastically avoid each other, eliminating the need for precise collision detection between them.
+Accurate detection will be required for collisions between the player and objects including structures and enemies.  This will be done with pixel masks and a grid.
+
+Testing for when an enemy reaches a structure can be done adequately by thresholding Euclidean distance.  Enemies will elastically avoid each other, eliminating the need for precise collision detection between them.
 
 \subsection{Artificial intelligence}
 
-Enemies will use A* pathfinding.
+AI will be needed for enemies to select targets, find a path to them, and attack appropriately.  The selection and attack strategies will be unique to each enemy type.
+
+Pathfinding will be done by A* search, with nodes defined at targets and at the corners of structures.  Enemies will also avoid each other when too close to prevent collisions.
 
 \end{document}
