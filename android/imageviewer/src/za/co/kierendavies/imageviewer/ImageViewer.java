@@ -1,12 +1,14 @@
 package za.co.kierendavies.imageviewer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.*;
 
 public class ImageViewer extends Activity {
     public static final int delay = 5000; // milliseconds
@@ -40,43 +42,74 @@ public class ImageViewer extends Activity {
         }
     };
 
+    private ShareActionProvider mShareActionProvider;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         imageView = (ImageView) findViewById(R.id.image);
         imageView.setImageResource(imageIds[imageId]);
-        banner = (TextView) findViewById(R.id.banner);
-        banner.setText(titles[imageId]);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options, menu);
+
+        mShareActionProvider = (ShareActionProvider) menu.findItem(R.id.menu_share).getActionProvider();
+        mShareActionProvider.setShareIntent(getDefaultShareIntent());
+
+        getActionBar().setTitle(titles[imageId]);
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle fullscreen, rotate, etc.
+        return false;
+    }
+
+    private Intent getDefaultShareIntent() {
+        return null;  //To change body of created methods use File | Settings | File Templates.
     }
 
     public void navPrev(View view) {
         imageId--;
         if (imageId < 0) imageId += imageIds.length;  // java does modular arithmetic stupidly
         imageView.setImageResource(imageIds[imageId]);
-        banner.setText(titles[imageId]);
+        getActionBar().setTitle(titles[imageId]);
+        if (playing) {
+            // reset the timing
+            handler.removeCallbacks(runnableNext);
+            handler.postDelayed(runnableNext, delay);
+        }
     }
 
     public void navPlayPause(View view) {
-        Button button = (Button) view;
+        ImageButton button = (ImageButton) view;
         if (playing) {
             //pause
             playing = false;
             handler.removeCallbacks(runnableNext);
-            button.setText(R.string.button_play);
+            button.setImageResource(R.drawable.av_pause);
         } else {
             //play
             playing = true;
             System.out.println("scheduling");
-            handler.postDelayed(runnableNext, 0);  // let's not delay the first time
-            System.out.println("modifying button");
-            button.setText(R.string.button_pause);
+            handler.postDelayed(runnableNext, delay);
+            button.setImageResource(R.drawable.av_play);
         }
     }
 
     public void navNext(View view) {
         imageId = (imageId + 1) % imageIds.length;
         imageView.setImageResource(imageIds[imageId]);
-        banner.setText(titles[imageId]);
+        getActionBar().setTitle(titles[imageId]);
+        if (playing) {
+            // reset the timing
+            handler.removeCallbacks(runnableNext);
+            handler.postDelayed(runnableNext, delay);
+        }
     }
 }
