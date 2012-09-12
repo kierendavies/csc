@@ -252,8 +252,9 @@ public class SurvivalGame extends Game {
         offset.y = -player.getPosition().y + (this.getViewportDimension().height / 2);
 
 
-        //checking each unit against each other unit for collisions
+        //checking each units for collisions
         for (int i = 0; i < objects.size(); i++) {
+            //check against matches from grid
             for (int j = i + 1; j < objects.size(); j++) {
                 GameObject o1 = objects.elementAt(i);
                 GameObject o2 = objects.elementAt(j);
