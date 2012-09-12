@@ -7,7 +7,7 @@
  */
 public class Grid {
 
-    public Grid() {
+    public Grid(int gameWidth, int gameHeight, int cellWidth, int cellHeight) {
 
     }
 }

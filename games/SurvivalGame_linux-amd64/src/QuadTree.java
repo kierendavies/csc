@@ -17,13 +17,13 @@ public class QuadTree {
     private QuadTree southWest;
     private QuadTree southEast;
 
-    public static void main(String[] args) {
-        GameObject gameObject = new GameObject(0, 0);
-        Point2D.Float point = gameObject.getPosition();
-        Rectangle2D.Float box = gameObject.getAABoundingBox();
-        box.contains(point);
-        box.intersects(box);
-    }
+//    public static void main(String[] args) {
+//        GameObject gameObject = new GameObject(0, 0);
+//        Point2D.Float point = gameObject.getPosition();
+//        Rectangle2D.Float box = gameObject.getAABoundingBox();
+//        box.contains(point);
+//        box.intersects(box);
+//    }
 
     public QuadTree(Rectangle2D.Float boundary) {
         this.boundary = boundary;
