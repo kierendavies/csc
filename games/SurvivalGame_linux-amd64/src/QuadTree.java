@@ -39,6 +39,7 @@ public class QuadTree {
         if (northWest != null) {
             subdivide();
         }
+        return true;
     }
 
     public void subdivide() {

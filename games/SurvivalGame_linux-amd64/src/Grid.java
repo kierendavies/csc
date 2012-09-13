@@ -3,6 +3,7 @@ import GameEngine.GameObject;
 import java.awt.geom.Rectangle2D;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -25,7 +26,12 @@ public class Grid {
         this.gameHeight = gameHeight;
         this.cellWidth = cellWidth;
         this.cellHeight = cellHeight;
-        cells = new HashSet[divRndUp(gameWidth, cellWidth)][divRndUp(gameHeight, cellHeight)];
+        cells = new HashSet[divRndUp(gameWidth, cellWidth)+1][divRndUp(gameHeight, cellHeight)+1];  // +1 for safety
+        for (int x = 0; x <= divRndUp(gameWidth, cellWidth); x++) {
+            for (int y = 0; y <= divRndUp(gameHeight, cellHeight); y++) {
+                cells[x][y] = new HashSet<GameObject>();
+            }
+        }
     }
 
     private int divRndUp(int a, int b) {
@@ -44,6 +50,8 @@ public class Grid {
 
         for (int x = left; x <= right; ++x) {
             for (int y = top; y <= bottom; ++y) {
+                if (object == null) System.out.println("OBJECT IS NULL");
+                if (cells[x][y] == null) System.out.println("SET IS NULL");
                 cells[x][y].add(object);
             }
         }

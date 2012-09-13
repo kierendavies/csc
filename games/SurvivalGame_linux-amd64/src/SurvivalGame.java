@@ -18,6 +18,10 @@ public class SurvivalGame extends Game {
     // Offset of the screen
     private Point2D.Float offset = new Point2D.Float(0, 0);
 
+    // game area size
+    private int worldWidth;
+    private int worldHeight;
+
     private boolean alive = true;
 
     // A Collection of GameObjects in the world that will be used with the collision detection system
@@ -77,11 +81,10 @@ public class SurvivalGame extends Game {
 
         int gridSize = 12;
 
-        // initialise collision grid here because we need some sizes
-        collisionGrid = new Grid(gridSize * grassTexture.getWidth(),
-                                 gridSize * grassTexture.getHeight(),
-                                 rockTexture.getWidth(),
-                                 rockTexture.getHeight());
+        worldWidth = gridSize * grassTexture.getWidth();
+        worldHeight = gridSize * grassTexture.getHeight();
+
+        collisionGrid = new Grid(worldWidth, worldHeight, rockTexture.getWidth(), rockTexture.getHeight());
 
 
         // creating some random rocks to shoot
@@ -272,24 +275,37 @@ public class SurvivalGame extends Game {
         offset.y = -player.getPosition().y + (this.getViewportDimension().height / 2);
 
 
+        // destroy bullets outside the game area because they break collision detection
+        for (int i = 0; i < objects.size(); i++) {
+            if (objects.elementAt(i) instanceof BulletObject) {
+                float x = objects.elementAt(i).getPosition().x;
+                float y = objects.elementAt(i).getPosition().y;
+                if (x < 0 || y < 0 || x > worldWidth || y > worldHeight) {
+                    objects.remove(i);
+                    i--;
+                }
+            }
+        }
+
         //checking each units for collisions
         for (int i = 0; i < objects.size(); i++) {
             GameObject o1 = objects.elementAt(i);
-            //check against matches from collisionGrid
+            // check against matches from collisionGrid
             for (GameObject o2 : collisionGrid.getHits(o1)) {
+                if (o1 instanceof WallObject && o2 instanceof WallObject) continue;  // do nothing anyway
+
                 Rectangle2D.Float bb1 = o1.getAABoundingBox();
                 Rectangle2D.Float bb2 = o2.getAABoundingBox();
+                //System.out.println("comparing ("+bb1.x+", "+bb1.y+") with ("+bb2.x+", "+bb2.y+")");
                 if (!boxIntersectBox(bb1, bb2)) continue;
 
                 boolean collides = false;
                 // assume no collision, then do pixel checking
                 IntBuffer buffer1 = o1.getCurrentTexture().getIntBuffer();
                 IntBuffer buffer2 = o2.getCurrentTexture().getIntBuffer();
-
+                
                 if (collides) {
-                    if (o1 instanceof WallObject && o2 instanceof WallObject) {
-                        //do nothing
-                    } else if ((o1 instanceof BulletObject && o2 instanceof WallObject) || o1 instanceof WallObject && o2 instanceof BulletObject) {
+                    if ((o1 instanceof BulletObject && o2 instanceof WallObject) || o1 instanceof WallObject && o2 instanceof BulletObject) {
                         // just destroy the bullet, not the wall
                         if (o1 instanceof BulletObject)
                             o1.setMarkedForDestruction(true);
