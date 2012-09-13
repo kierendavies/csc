@@ -9,6 +9,7 @@ import java.awt.geom.*;
  */
 public class PhysicalObject extends GameObject {
 
+    private Grid grid;
     protected Point2D.Float velocity = new Point2D.Float(0, 0); // in units per frame
     protected float mass; // in ...uhm ... thingies... whatever all the physic-y equations make it ...
 
@@ -21,9 +22,10 @@ public class PhysicalObject extends GameObject {
      * @param y Position along the y coordinate
      * @param m The mass of this object
      */
-    public PhysicalObject(float x, float y, float m) {
+    public PhysicalObject(float x, float y, float m, Grid grid) {
         super(x, y);
         mass = m;
+        this.grid = grid;  // this reference is needed for position updates
     }
 
 
@@ -111,7 +113,9 @@ public class PhysicalObject extends GameObject {
      * position.y += velocity.y;
      */
     public void doTimeStep() {
+        grid.remove(this);  // update grid position the sneaky way
         position.x += velocity.x;
         position.y += velocity.y;
+        grid.add(this);
     }
 }

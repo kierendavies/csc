@@ -1,3 +1,5 @@
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 import java.util.Vector;
 import java.awt.geom.*;
 import java.awt.event.*;
@@ -20,6 +22,8 @@ public class SurvivalGame extends Game {
 
     // A Collection of GameObjects in the world that will be used with the collision detection system
     private Vector<GameObject> objects = new Vector<GameObject>();
+    // and it's associated collisionGrid
+    private Grid collisionGrid;
 
     // Grid GameObjects
     private GameObject[][] gridTile;
@@ -73,6 +77,12 @@ public class SurvivalGame extends Game {
 
         int gridSize = 12;
 
+        // initialise collision grid here because we need some sizes
+        collisionGrid = new Grid(gridSize * grassTexture.getWidth(),
+                                 gridSize * grassTexture.getHeight(),
+                                 rockTexture.getWidth(),
+                                 rockTexture.getHeight());
+
 
         // creating some random rocks to shoot
         for (int i = 0; i < 8; i++) {
@@ -83,6 +93,7 @@ public class SurvivalGame extends Game {
             GameObject go = new GameObject(x, y);
             go.addTexture(softRockTexture, 0, 0);
             objects.add(go);
+            collisionGrid.add(go);
         }
 
 
@@ -101,19 +112,23 @@ public class SurvivalGame extends Game {
             WallObject go = new WallObject(i, 0);
             go.addTexture(rockTexture, 0, 0);
             objects.add(go);
+            collisionGrid.add(go);
 
             go = new WallObject(i, grassTexture.getHeight() * (gridSize - 1));
             go.addTexture(rockTexture, 0, 0);
             objects.add(go);
+            collisionGrid.add(go);
         }
         for (int i = grassTexture.getHeight(); i < grassTexture.getHeight() * (gridSize - 1); i += rockTexture.getHeight()) {
             WallObject go = new WallObject(0, i);
             go.addTexture(rockTexture, 0, 0);
             objects.add(go);
+            collisionGrid.add(go);
 
             go = new WallObject(rockTexture.getWidth() * (gridSize - 1), i);
             go.addTexture(rockTexture, 0, 0);
             objects.add(go);
+            collisionGrid.add(go);
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -128,6 +143,8 @@ public class SurvivalGame extends Game {
         }
 
         objects.add(player);
+        // don't add player to grid - this is slightly faster because player is so dynamic
+        // and it is safe because it is the only object not in the grid
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     }
@@ -142,12 +159,15 @@ public class SurvivalGame extends Game {
         float dir = 90 + player.getDegreesTo(mousePos);
         BulletObject bullet =
                 new BulletObject(
-                        player.getPosition().x + (float) Math.sin(Math.toRadians(dir)) * 32, player.getPosition().y - (float) Math.cos(Math.toRadians(dir)) * 32, 1f, 300, bulletTexture);
+                        player.getPosition().x + (float) Math.sin(Math.toRadians(dir)) * 32,
+                        player.getPosition().y - (float) Math.cos(Math.toRadians(dir)) * 32,
+                        1f, 300, bulletTexture, collisionGrid);
 
         //bullet.setVelocity(player.getVelocity());
         bullet.applyForceInDirection(dir, 6f);
 
         objects.add(bullet);
+        collisionGrid.add(bullet);
     }
 
     public static boolean isPointInBox(final Point2D.Float point, final Rectangle2D.Float box) {
@@ -254,11 +274,19 @@ public class SurvivalGame extends Game {
 
         //checking each units for collisions
         for (int i = 0; i < objects.size(); i++) {
-            //check against matches from grid
-            for (int j = i + 1; j < objects.size(); j++) {
-                GameObject o1 = objects.elementAt(i);
-                GameObject o2 = objects.elementAt(j);
-                if (boxIntersectBox(o1.getAABoundingBox(), o2.getAABoundingBox())) {
+            GameObject o1 = objects.elementAt(i);
+            //check against matches from collisionGrid
+            for (GameObject o2 : collisionGrid.getHits(o1)) {
+                Rectangle2D.Float bb1 = o1.getAABoundingBox();
+                Rectangle2D.Float bb2 = o2.getAABoundingBox();
+                if (!boxIntersectBox(bb1, bb2)) continue;
+
+                boolean collides = false;
+                // assume no collision, then do pixel checking
+                IntBuffer buffer1 = o1.getCurrentTexture().getIntBuffer();
+                IntBuffer buffer2 = o2.getCurrentTexture().getIntBuffer();
+
+                if (collides) {
                     if (o1 instanceof WallObject && o2 instanceof WallObject) {
                         //do nothing
                     } else if ((o1 instanceof BulletObject && o2 instanceof WallObject) || o1 instanceof WallObject && o2 instanceof BulletObject) {
@@ -268,10 +296,10 @@ public class SurvivalGame extends Game {
                         else
                             o2.setMarkedForDestruction(true);
 
-                    } else if (o1 instanceof PlayerObject || o2 instanceof PlayerObject) {
+                    } else if (o1 instanceof PlayerObject) {
                         player.revertPosition();
                     } else {
-                        System.out.println("Removing objects " + i + ":" + j);
+                        //System.out.println("Removing objects " + i + ":" + j);
                         o1.setMarkedForDestruction(true);
                         o2.setMarkedForDestruction(true);
 
@@ -289,6 +317,7 @@ public class SurvivalGame extends Game {
                     player = null;
                 }
                 // removing object from list of GameObjects
+                collisionGrid.remove(objects.elementAt(i));
                 objects.remove(i);
                 i--;
             }
