@@ -84,8 +84,8 @@ public class SurvivalGame extends Game {
         worldWidth = gridSize * grassTexture.getWidth();
         worldHeight = gridSize * grassTexture.getHeight();
 
-        collisionGrid = new Grid(worldWidth, worldHeight, rockTexture.getWidth(), rockTexture.getHeight());
-
+        collisionGrid = new Grid(worldWidth+64, worldHeight+64, rockTexture.getWidth(), rockTexture.getHeight());
+        // this sizing is hacked, I know
 
         // creating some random rocks to shoot
         for (int i = 0; i < 8; i++) {
@@ -280,7 +280,8 @@ public class SurvivalGame extends Game {
             if (objects.elementAt(i) instanceof BulletObject) {
                 float x = objects.elementAt(i).getPosition().x;
                 float y = objects.elementAt(i).getPosition().y;
-                if (x < 0 || y < 0 || x > worldWidth || y > worldHeight) {
+                if (x < 0 || y < 0 || x >= worldWidth-7 || y >= worldHeight-7) {
+                    collisionGrid.remove(objects.elementAt(i));
                     objects.remove(i);
                     i--;
                 }
@@ -293,17 +294,35 @@ public class SurvivalGame extends Game {
             // check against matches from collisionGrid
             for (GameObject o2 : collisionGrid.getHits(o1)) {
                 if (o1 instanceof WallObject && o2 instanceof WallObject) continue;  // do nothing anyway
-
-                Rectangle2D.Float bb1 = o1.getAABoundingBox();
-                Rectangle2D.Float bb2 = o2.getAABoundingBox();
-                //System.out.println("comparing ("+bb1.x+", "+bb1.y+") with ("+bb2.x+", "+bb2.y+")");
-                if (!boxIntersectBox(bb1, bb2)) continue;
+                if (!boxIntersectBox(o1.getAABoundingBox(), o2.getAABoundingBox())) continue;  // no box intersection
 
                 boolean collides = false;
                 // assume no collision, then do pixel checking
-                IntBuffer buffer1 = o1.getCurrentTexture().getIntBuffer();
-                IntBuffer buffer2 = o2.getCurrentTexture().getIntBuffer();
-                
+                ByteBuffer buffer1 = o1.getCurrentTexture().getByteBuffer();
+                ByteBuffer buffer2 = o2.getCurrentTexture().getByteBuffer();
+
+                Rectangle bb1 = o1.getIntAABoundingBox();
+                Rectangle bb2 = o2.getIntAABoundingBox();
+                int left = Math.max(bb1.x, bb2.x);  // truncate unnecessary stuff on the left
+                int right = Math.min(bb1.x+bb1.width, bb2.x+bb2.width) - 1;  // and right
+                int top = Math.max(bb1.y, bb2.y);  // etc.
+                int bottom = Math.min(bb1.y+bb1.height, bb2.y+bb2.height) - 1;
+                // top and bottom might be logically swapped, but it doesn't matter
+                // this engine is so broken; that -1 shouldn't be necessary
+
+                for (int x = left; x <= right; x++) {
+                    for (int y = top; y <= bottom; y++) {
+                        int a1 = buffer1.get(((x-bb1.x) + (y-bb1.y)*bb1.width)*4 + 3);
+                        int a2 = buffer2.get(((x-bb2.x) + (y-bb2.y)*bb2.width)*4 + 3);
+
+                        if (a1 == -1 && a2 == -1) {  // full alpha on both pixels
+                            collides = true;
+                            break;
+                        }
+                    }
+                    if (collides) break;
+                }
+
                 if (collides) {
                     if ((o1 instanceof BulletObject && o2 instanceof WallObject) || o1 instanceof WallObject && o2 instanceof BulletObject) {
                         // just destroy the bullet, not the wall
@@ -315,7 +334,6 @@ public class SurvivalGame extends Game {
                     } else if (o1 instanceof PlayerObject) {
                         player.revertPosition();
                     } else {
-                        //System.out.println("Removing objects " + i + ":" + j);
                         o1.setMarkedForDestruction(true);
                         o2.setMarkedForDestruction(true);
 
