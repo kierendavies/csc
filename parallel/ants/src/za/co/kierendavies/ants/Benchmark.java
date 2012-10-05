@@ -6,9 +6,10 @@ import java.util.Scanner;
 import java.util.Timer;
 
 public class Benchmark {
-    private static final String filename = "/home/kieren/csc/parallel/ant1.txt";
+    private static String filename; //= "/home/kieren/csc/parallel/ant1.txt";
 
     public static void main(String[] args) {
+        filename = args[0];
         BufferedReader fin;
         Scanner in;
         try {
