@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Timer;
 
 public class Benchmark {
-    private static final String filename = "/home/kieren/Documents/csc/parallel/ant1.txt";
+    private static final String filename = "/home/kieren/csc/parallel/ant1.txt";
 
     public static void main(String[] args) {
         BufferedReader fin;
@@ -51,17 +51,36 @@ public class Benchmark {
 //        System.err.println("range (" + xMin + ", " + yMin + ")" +
 //                             " to (" + xMax + ", " + yMax + ")");
 
-        System.err.println("querying... ");
+        int size = 100;
+        int incr = 30;
+
+        System.err.print("querying (sequential)... ");
         startTime = System.currentTimeMillis();
-        for (int xxMin = -180; xxMin <= 180 - 30; xxMin += 15) {
-            for (int yyMin = -180; yyMin <= 180 - 30; yyMin += 15) {
-                for (int xxMax = xxMin + 30; xxMax <= 180; xxMax += 15) {
-                    for (int yyMax = yyMin + 30; yyMax <= 180; yyMax += 15) {
+        for (int xxMin = -180; xxMin <= 180 - size; xxMin += incr) {
+            for (int yyMin = -180; yyMin <= 180 - size; yyMin += incr) {
+                for (int xxMax = xxMin + size; xxMax <= 180; xxMax += incr) {
+                    for (int yyMax = yyMin + size; yyMax <= 180; yyMax += incr) {
                         //System.out.println(bins.querySequential(xxMin, yyMin, xxMax, yyMax));
                         bins.querySequential(xxMin, yyMin, xxMax, yyMax);
                     }
                 }
             }
+        }
+        System.err.println("done in " + (System.currentTimeMillis() - startTime) + "ms");
+
+        System.err.print("querying (parallel)... ");
+        startTime = System.currentTimeMillis();
+        for (int xxMin = -180; xxMin <= 180 - size; xxMin += incr) {
+            for (int yyMin = -180; yyMin <= 180 - size; yyMin += incr) {
+                for (int xxMax = xxMin + size; xxMax <= 180; xxMax += incr) {
+                    for (int yyMax = yyMin + size; yyMax <= 180; yyMax += incr) {
+                        //System.out.println(bins.querySequential(xxMin, yyMin, xxMax, yyMax));
+                        bins.queryParallel(xxMin, yyMin, xxMax, yyMax);
+                    }
+                }
+                break;
+            }
+            break;
         }
         System.err.println("done in " + (System.currentTimeMillis() - startTime) + "ms");
     }
