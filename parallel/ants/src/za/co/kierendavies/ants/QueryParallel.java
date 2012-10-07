@@ -1,6 +1,6 @@
 package za.co.kierendavies.ants;
 
-public class QueryParallel extends RecursiveTask<Integer> {
+public class QueryParallel extends RecursiveTask<int> {
     private static final int CUTOFF = 100;
 
     private Bins bins;
@@ -14,7 +14,7 @@ public class QueryParallel extends RecursiveTask<Integer> {
         this.yMax = yMax;
     }
 
-    protected Integer compute() {
+    protected int compute() {
         if ((xMax - xMin) * (yMax - yMin) <= CUTOFF) {
             return bins.querySequential(xMin, yMin, xMax, yMax);
         } else {
