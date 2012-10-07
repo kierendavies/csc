@@ -6,9 +6,10 @@ import java.util.Scanner;
 import java.util.Timer;
 
 public class Benchmark {
-    private static final String filename = "/home/kieren/Documents/csc/parallel/ant1.txt";
+    private static String filename; //= "/home/kieren/csc/parallel/ant1.txt";
 
     public static void main(String[] args) {
+        filename = args[0];
         BufferedReader fin;
         Scanner in;
         try {
@@ -26,6 +27,7 @@ public class Benchmark {
         double xMax = 180;
         double yMin = -180;
         double yMax = 180;
+
         System.err.print("reading file... ");
         long startTime = System.currentTimeMillis();
         int lines = 0;
@@ -47,22 +49,59 @@ public class Benchmark {
             return;
         }
         System.err.println("done in " + (System.currentTimeMillis() - startTime) + "ms");
-//        System.err.println("" + lines + " data points");
-//        System.err.println("range (" + xMin + ", " + yMin + ")" +
-//                             " to (" + xMax + ", " + yMax + ")");
+//        System.err.println("" + lines + " data points in (" + xMin + ", " + yMin + "; " + xMax + ", " + yMax + ")");
 
-        System.err.println("querying... ");
+        int size = 100;
+        int incr = 20;
+
+        System.err.print("comparing results... ");
         startTime = System.currentTimeMillis();
-        for (int xxMin = -180; xxMin <= 180 - 30; xxMin += 15) {
-            for (int yyMin = -180; yyMin <= 180 - 30; yyMin += 15) {
-                for (int xxMax = xxMin + 30; xxMax <= 180; xxMax += 15) {
-                    for (int yyMax = yyMin + 30; yyMax <= 180; yyMax += 15) {
-                        //System.out.println(bins.querySequential(xxMin, yyMin, xxMax, yyMax));
-                        bins.querySequential(xxMin, yyMin, xxMax, yyMax);
+        for (int _xMin = (int)xMin; _xMin <= (int)xMax - size; _xMin += incr) {
+            for (int _yMin = (int)yMin; _yMin <= (int)yMax - size; _yMin += incr) {
+                for (int _xMax = _xMin + size; _xMax <= (int)xMax; _xMax += incr) {
+                    for (int _yMax = _yMin + size; _yMax <= (int)yMax; _yMax += incr) {
+                        //System.out.println(bins.querySequential(_xMin, _yMin, _xMax, _yMax));
+                        double seq = bins.querySequential(_xMin, _yMin, _xMax, _yMax);
+                        double pll = bins.queryParallel(_xMin, _yMin, _xMax, _yMax);
+                        //if (seq != pll) System.err.println("results differ by " + (pll - seq));
+                        //else System.err.println("correct");
                     }
                 }
             }
         }
         System.err.println("done in " + (System.currentTimeMillis() - startTime) + "ms");
+        System.gc();
+
+        System.err.print("querying (sequential)... ");
+        startTime = System.currentTimeMillis();
+        for (int _xMin = (int)xMin; _xMin <= (int)xMax - size; _xMin += incr) {
+            for (int _yMin = (int)yMin; _yMin <= (int)yMax - size; _yMin += incr) {
+                for (int _xMax = _xMin + size; _xMax <= (int)xMax; _xMax += incr) {
+                    for (int _yMax = _yMin + size; _yMax <= (int)yMax; _yMax += incr) {
+                        //System.out.println(bins.querySequential(_xMin, _yMin, _xMax, _yMax));
+                        bins.querySequential(_xMin, _yMin, _xMax, _yMax);
+                    }
+                }
+            }
+        }
+        System.err.println("done in " + (System.currentTimeMillis() - startTime) + "ms");
+        System.gc();
+
+        System.err.print("querying (parallel)... ");
+        startTime = System.currentTimeMillis();
+        for (int _xMin = (int)xMin; _xMin <= (int)xMax - size; _xMin += incr) {
+            for (int _yMin = (int)yMin; _yMin <= (int)yMax - size; _yMin += incr) {
+                for (int _xMax = _xMin + size; _xMax <= (int)xMax; _xMax += incr) {
+                    for (int _yMax = _yMin + size; _yMax <= (int)yMax; _yMax += incr) {
+                        //System.out.println(bins.querySequential(_xMin, _yMin, _xMax, _yMax));
+                        bins.queryParallel(_xMin, _yMin, _xMax, _yMax);
+                    }
+                }
+                break;
+            }
+            break;
+        }
+        System.err.println("done in " + (System.currentTimeMillis() - startTime) + "ms");
+        //System.gc();
     }
 }
