@@ -7,7 +7,7 @@ public class Benchmark {
     static int yMax = 200;
     static Bins bins = new Bins(xMin, yMin, xMax, yMax);
 
-    static int[] cutoffs = {100, 400, 2500, 10000, 40000, 250000};
+    static int[] cutoffs = {400, 2500, 10000, 40000};
 
     static int queries = 0;
     public static int[][] gets = new int[400][400];
@@ -32,7 +32,7 @@ public class Benchmark {
         System.out.println("done in " + elapsedTime + "ms");
 
         int size = 200;
-        int incr = 40;
+        int incr = 25;
 
         /*System.out.print("comparing results... ");
         startTime = System.currentTimeMillis();
@@ -112,5 +112,22 @@ public class Benchmark {
             elapsedTime = System.currentTimeMillis() - startTime;
             System.out.println(queries + " queries in " + elapsedTime + "ms, average " + ((double)elapsedTime / queries) + "ms");
         }
+
+        queries = 1000;
+        System.out.print("querying (sequential)... ");
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < queries; ++i) {
+            bins.querySequential(-180, -180, 180, 180);
+        }
+        elapsedTime = System.currentTimeMillis() - startTime;
+        System.out.println(queries + " queries in " + elapsedTime + "ms, average " + ((double)elapsedTime / queries) + "ms");
+
+        System.out.print("querying (parallel)... ");
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < queries; ++i) {
+            bins.queryParallel(-180, -180, 180, 180);
+        }
+        elapsedTime = System.currentTimeMillis() - startTime;
+        System.out.println(queries + " queries in " + elapsedTime + "ms, average " + ((double)elapsedTime / queries) + "ms");
     }
 }
