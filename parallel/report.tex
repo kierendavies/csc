@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+\title{CSC2002S Multithreading Assignment \\
+       \emph{``Where are the ants?''}}
+\author{Kieren Davies \\
+        \textsc{dvskie001}}
+\date{}
+\maketitle
+
+\begin{abstract}
+This report investigates some of the benefits and obstacles involved in parallelising a simple problem with Java's ForkJoin Framework.  More\dots
+\end{abstract}
+
+\newpage
+
+\section{Introduction}
+
+The premise of this assignment is that the movements of certain ants are being tracked to observe active areas.
+The task for this assignment was to create a system for querying ant activity in certain ranges.
+
+\section{Implementation}
+
+The following classes were implemented.
+
+\begin{itemize}
+	\item \texttt{Benchmark} --- reads data from the file once, and then automatically performs many queries with various parameters and prints benchmarking information.
+	\item \texttt{Bins} --- stores data points as counts in discrete bins for more rapid retrieval, at the cost of a small degree of accuracy.
+	\item \texttt{QueryParallel} --- whatever
+\end{itemize}
+
+\section{Results}
+
+All benchmarking was done on ``fatso'', a blade server owned by UCT with 4 cores and 24GB of RAM.
+
+\section{Analysis}
+
+\end{document}
