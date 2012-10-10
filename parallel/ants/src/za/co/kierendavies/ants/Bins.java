@@ -46,7 +46,7 @@ public class Bins {
         pool.invoke(action);
     }
 
-    public void add(double x, double y) {
+    public synchronized void add(double x, double y) {
         ++bins[(int)x - xMin][(int)y - yMin];
     }
 

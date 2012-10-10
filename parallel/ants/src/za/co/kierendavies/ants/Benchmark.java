@@ -7,7 +7,7 @@ public class Benchmark {
     static int yMax = 200;
     static Bins bins = new Bins(xMin, yMin, xMax, yMax);
 
-    static int[] cutoffs = {2500, 10000}; //{1, 4, 25, 100, 400, 2500, 10000, 40000, 250000};
+    static int[] cutoffs = {100, 400, 2500, 10000, 40000, 250000};
 
     static int queries = 0;
     public static int[][] gets = new int[400][400];
@@ -31,8 +31,8 @@ public class Benchmark {
         elapsedTime = System.currentTimeMillis() - startTime;
         System.out.println("done in " + elapsedTime + "ms");
 
-        int size = 100;
-        int incr = 50;
+        int size = 200;
+        int incr = 40;
 
         /*System.out.print("comparing results... ");
         startTime = System.currentTimeMillis();
