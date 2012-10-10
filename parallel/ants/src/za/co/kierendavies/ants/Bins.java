@@ -1,12 +1,15 @@
 package za.co.kierendavies.ants;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.concurrent.ForkJoinPool;
 
 public class Bins {
     private int xMin = 0, yMin = 0;
     private int xMax = 0, yMax = 0;
     private int xSize = 1, ySize = 1;
-    double[][] bins;
+    private double[][] bins;
 
     public Bins(double xMin, double yMin, double xMax, double yMax) {
         this.xMin = (int) Math.floor(xMin);
@@ -14,6 +17,36 @@ public class Bins {
         this.xMax = (int) Math.ceil(xMax);
         this.yMax = (int) Math.ceil(yMax);
         bins = new double[this.xMax - this.xMin + 1][this.yMax - this.yMin + 1];
+    }
+
+    public void load(String filename) {
+        try {
+            BufferedReader stream = new BufferedReader(new FileReader(filename));
+            String line;
+            while ((line = stream.readLine()) != null) {
+                String[] tokens = line.split(" ");
+                add(Double.parseDouble(tokens[2]), Double.parseDouble(tokens[4]));
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return;
+        } catch (FileNotFoundException e) {
+            System.err.println("file not found");
+            e.printStackTrace();
+            System.exit(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+
+    public void loadParallel(String[] filenames) {
+        LoadParallel action = new LoadParallel(this, filenames);
+        ForkJoinPool pool = new ForkJoinPool();
+        pool.invoke(action);
+    }
+
+    public void setParallelCutoff(int cutoff) {
+        QueryParallel.setCutoff(cutoff);
     }
 
     public void add(double x, double y) {
