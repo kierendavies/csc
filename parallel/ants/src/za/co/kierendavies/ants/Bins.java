@@ -10,6 +10,7 @@ public class Bins {
     private int xMax = 0, yMax = 0;
     private int xSize = 1, ySize = 1;
     private double[][] bins;
+    private double[][] cumulative;
 
     public Bins(double xMin, double yMin, double xMax, double yMax) {
         this.xMin = (int) Math.floor(xMin);
@@ -45,20 +46,46 @@ public class Bins {
         pool.invoke(action);
     }
 
-    public void setParallelCutoff(int cutoff) {
-        QueryParallel.setCutoff(cutoff);
-    }
-
     public void add(double x, double y) {
         ++bins[(int)x - xMin][(int)y - yMin];
     }
 
-    public double get(double x, double y) {
-        return bins[(int)x - xMin][(int)y - yMin];
+    public void preprocess() {
+        cumulative = new double[xMax - xMin + 1][yMax - yMin + 1];
+        for (int x = 0; x <= this.xMax - this.xMin; ++x) {
+            cumulative[x][0] = bins[x][0];
+        }
+        for (int y = 1; y <= yMax - yMin; ++y) {
+            cumulative[0][y] = bins[0][y];
+        }
+        for (int x = 1; x <= this.xMax - this.xMin; ++x) {
+            for (int y = 1; y <= yMax - yMin; ++y) {
+                cumulative[x][y] = cumulative[x-1][y] + cumulative[x][y-1] - cumulative[x-1][y-1] + bins[x][y];
+            }
+        }
+    }
+
+    public void setParallelCutoff(int cutoff) {
+        QueryParallel.setCutoff(cutoff);
     }
 
     public double get(int x, int y) {
+        ++Benchmark.gets[x - xMin][y - yMin];
         return bins[x - xMin][y - yMin];
+    }
+
+    public double get(double x, double y) {
+        return get((int) x, (int) y);
+    }
+
+    public double getCumulative(int x, int y) {
+        if (x < xMin || y < yMin) return 0;
+        ++Benchmark.gets[x - xMin][y - yMin];
+        return cumulative[x - xMin][y - yMin];
+    }
+
+    public double getCumulative(double x, double y) {
+        return getCumulative((int) x, (int) y);
     }
 
     public double querySequential(int xMin, int yMin, int xMax, int yMax) {
@@ -69,6 +96,10 @@ public class Bins {
             }
         }
         return total;
+    }
+
+    public double querySequentialSmarter(int xMin, int yMin, int xMax, int yMax) {
+        return getCumulative(xMax-1, yMax-1) - getCumulative(xMax-1, yMin-1) - getCumulative(xMin-1, yMax-1) + getCumulative(xMin-1, yMin-1);
     }
 
     public double queryParallel(int xMin, int yMin, int xMax, int yMax) {
