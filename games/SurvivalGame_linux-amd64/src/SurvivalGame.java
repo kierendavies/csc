@@ -1,14 +1,14 @@
-import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
-import java.util.Vector;
-import java.awt.geom.*;
-import java.awt.event.*;
-import java.awt.*;
-
 import GameEngine.Game;
-import GameEngine.GameTexture;
 import GameEngine.GameFont;
 import GameEngine.GameObject;
+import GameEngine.GameTexture;
+
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+import java.nio.ByteBuffer;
+import java.util.Vector;
 
 
 //==================================================================================================
@@ -190,33 +190,35 @@ public class SurvivalGame extends Game {
     }
 
     private void handleControls(GameInputInterface gii) {
+        if(gii.keyDown(Config.keyExit)) {
+            endGame();
+        }
 
-        //----------------------------------
-
-        // This isn't so great, there are better and neater ways to do this, you are encouraged to implement a better one
         boolean move = false;
         float directionToMove = 0;
 
-        if (gii.keyDown(KeyEvent.VK_UP)) {
+        float xMove = 0, yMove = 0;
+
+        if (gii.keyDown(Config.keyUp)) {
             move = true;
-            if (gii.keyDown(KeyEvent.VK_LEFT) && !gii.keyDown(KeyEvent.VK_RIGHT))
+            if (gii.keyDown(Config.keyLeft) && !gii.keyDown(Config.keyRight))
                 directionToMove = 225;
-            else if (gii.keyDown(KeyEvent.VK_RIGHT) && !gii.keyDown(KeyEvent.VK_LEFT))
+            else if (gii.keyDown(Config.keyRight) && !gii.keyDown(Config.keyLeft))
                 directionToMove = 135;
             else
                 directionToMove = 180;
-        } else if (gii.keyDown(KeyEvent.VK_DOWN)) {
+        } else if (gii.keyDown(Config.keyDown)) {
             move = true;
-            if (gii.keyDown(KeyEvent.VK_LEFT) && !gii.keyDown(KeyEvent.VK_RIGHT))
+            if (gii.keyDown(Config.keyLeft) && !gii.keyDown(Config.keyRight))
                 directionToMove = -45;
-            else if (gii.keyDown(KeyEvent.VK_RIGHT) && !gii.keyDown(KeyEvent.VK_LEFT))
+            else if (gii.keyDown(Config.keyRight) && !gii.keyDown(Config.keyLeft))
                 directionToMove = 45;
             else
                 directionToMove = 0;
-        } else if (gii.keyDown(KeyEvent.VK_LEFT) && !gii.keyDown(KeyEvent.VK_RIGHT)) {
+        } else if (gii.keyDown(Config.keyLeft) && !gii.keyDown(Config.keyRight)) {
             move = true;
             directionToMove = 270;
-        } else if (gii.keyDown(KeyEvent.VK_RIGHT) && !gii.keyDown(KeyEvent.VK_LEFT)) {
+        } else if (gii.keyDown(Config.keyRight) && !gii.keyDown(Config.keyLeft)) {
             move = true;
             directionToMove = 90;
         }
@@ -224,7 +226,7 @@ public class SurvivalGame extends Game {
             player.moveInDirection(directionToMove);
 
         if (cooldownTimer <= 0) {
-            if (gii.keyDown(KeyEvent.VK_SPACE) || gii.mouseButtonDown(MouseEvent.BUTTON1)) {
+            if (gii.mouseButtonDown(MouseEvent.BUTTON1)) {
                 fireBullet();
             }
         }
@@ -235,22 +237,6 @@ public class SurvivalGame extends Game {
     //==================================================================================================
 
     public void logicStep(GameInputInterface gii) {
-
-        /*if(gii.keyDown(KeyEvent.VK_W)) {
-            offset.y -= 3.0;
-        }
-        if(gii.keyDown(KeyEvent.VK_S)) {
-            offset.y += 3.0;
-        }
-        if(gii.keyDown(KeyEvent.VK_A)) {
-            offset.x += 3.0;
-        }
-        if(gii.keyDown(KeyEvent.VK_D)) {
-            offset.x -= 3.0;
-        }
-        if(gii.keyDown(KeyEvent.VK_ESCAPE)) {
-            endGame();
-        }*/
 
         // some examples of the mouse interface
         mouseWheelTick += gii.mouseWheelRotation();
