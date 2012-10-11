@@ -200,30 +200,23 @@ public class SurvivalGame extends Game {
         float xMove = 0, yMove = 0;
 
         if (gii.keyDown(Config.keyUp)) {
-            move = true;
-            if (gii.keyDown(Config.keyLeft) && !gii.keyDown(Config.keyRight))
-                directionToMove = 225;
-            else if (gii.keyDown(Config.keyRight) && !gii.keyDown(Config.keyLeft))
-                directionToMove = 135;
-            else
-                directionToMove = 180;
-        } else if (gii.keyDown(Config.keyDown)) {
-            move = true;
-            if (gii.keyDown(Config.keyLeft) && !gii.keyDown(Config.keyRight))
-                directionToMove = -45;
-            else if (gii.keyDown(Config.keyRight) && !gii.keyDown(Config.keyLeft))
-                directionToMove = 45;
-            else
-                directionToMove = 0;
-        } else if (gii.keyDown(Config.keyLeft) && !gii.keyDown(Config.keyRight)) {
-            move = true;
-            directionToMove = 270;
-        } else if (gii.keyDown(Config.keyRight) && !gii.keyDown(Config.keyLeft)) {
-            move = true;
-            directionToMove = 90;
+            yMove++;
         }
-        if (move)
-            player.moveInDirection(directionToMove);
+        if (gii.keyDown(Config.keyDown)) {
+            yMove--;
+        }
+        if (gii.keyDown(Config.keyRight)) {
+            xMove++;
+        }
+        if (gii.keyDown(Config.keyLeft)) {
+            xMove--;
+        }
+
+        if (xMove != 0 || yMove != 0) {
+            player.inputMovement(xMove, yMove);
+        } else {
+
+        }
 
         if (cooldownTimer <= 0) {
             if (gii.mouseButtonDown(MouseEvent.BUTTON1)) {

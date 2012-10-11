@@ -1,11 +1,14 @@
-import java.awt.geom.Point2D;
-
 import GameEngine.GameObject;
+
+import java.awt.geom.Point2D;
 
 class PlayerObject extends GameObject {
 
     int numberOfDirectionTextures = 72;
     float direction;
+
+    float maxSpeed = 2;
+    float acceleration = 1;
 
     Point2D.Float oldPosition;
 
@@ -42,5 +45,9 @@ class PlayerObject extends GameObject {
         oldPosition = this.getPosition();
         incrementPosition((float) Math.sin(Math.toRadians(direction)) * 2, -(float) Math.cos(Math.toRadians(direction)) * 2);
         setDirection(direction);
+    }
+
+    public void inputMovement(float x, float y) {
+
     }
 }
