@@ -1,0 +1,133 @@
+Question 1 of 20
+What is the sum of 1+2+…+100?
+--> A. 5050
+B. 1000
+C. 6250
+D. 2800
+
+Question 2 of 20
+Determining how light sources illuminate a map is an instance of the visibility determination problem.
+--> True
+False
+
+Question 3 of 20
+Z-fighting occurs when:
+--> A. Sprites with the same depth overlap in a 3D API.
+B. A sprite is not angled orthogonally to the view direction in a 3D API
+C. The background sprite does not cover the whole of the view.
+D. All of the above.
+E. None of the above.
+
+Question 4 of 20
+Directional, Parallax, and Page Swap are examples of:
+A. Tiling methods
+--> B. Scrolling techniques
+C. Teleportation
+D. Collision detection
+
+Question 5 of 20
+A grip is a small proxy bitmap attached to the bottom of a sprite and used for collision detection.
+--> True
+False
+
+Question 6 of 20
+An isometric projection is a form of perspective projection.
+True
+--> False
+
+Question 7 of 20
+If a bit mask is expanded outwards by a few pixels in every direction, then:
+A. Only a solid collision with the corresponding sprite will register.
+--> B. Near misses of the corresponding sprite will count as collisions.
+C. Parts of the sprite will not count for the purposes of collision.
+
+Question 8 of 20
+MVC in Computer Science typically stands for:
+A. Maximum Value Composite
+B. Marvel vs. Capcom
+C. Most Valuable Computer
+--> D. Model View Controller
+
+Question 9 of 20
+If two axis aligned bounding boxes (A and B) are represented by their top left (LA, LB) and bottom right (RA, RB) vertices, then for which of these cases do the boxes definitely not intersect:
+A. RA.x < RB.x
+B. LA.y > RA.y
+--> C. LA.y > RB.y
+D. (A) and (B)
+E. (B) and (C)
+
+Question 10 of 20
+Which of these is NOT a valid method of creating isometric tiles:
+A. Rotating and scaling a top-down tile.
+B. Rendering from 3D with a parallel projection.
+--> C. Taking a photograph.
+
+Question 11 of 20
+The worst case for a grid spatial structure occurs when:
+A. All sprites cross cell boundaries.
+B. All sprites are dynamic.
+C. The average size of a sprite is larger than a single cell.
+--> D. All sprites fall in a single cell.
+
+Question 12 of 20
+The main advantage of using tiles in games is:
+x A. Memory
+B. Computation
+C. Faster Asset Development
+? D. (A) and (C)
+E. (B) and (C)
+
+Question 13 of 20
+A texture in a 3D API is:
+x A. An image transformed onto a surface.
+B. An efficient way of creating multicolored, bumpy surfaces with visual interest.
+C. A way of drawing sprites in a 3D API.
+? D. All of the above.
+E. None of the above.
+
+Question 14 of 20
+Which of these effects CANNOT be implemented using alpha-blended layers:
+--> A. Perspective Projection
+B. Objects seen underwater
+C. Fog of War
+D. Cut Aways to building interiors
+
+Question 15 of 20
+Procedural methods of content generation are best used for:
+A. Character Sprites
+--> B. Natural Background Objects
+C. Audio
+D. Man-made Background Objects
+
+Question 16 of 20
+Which of these 3D technologies is NOT required to create a 2D game using a 3D API:
+A. Alpha Blending
+B. Depth Sorting
+C. Texture Mapping
+--> D. Perspective Projection
+
+Question 17 of 20
+A quad-tree should always be balanced.
+True
+--> False
+
+Question 18 of 20
+The pixel overlap test for collision between sprites is based on the following boolean operator:
+A. XOR
+--> B. AND
+C. NAND
+D. OR
+
+Question 19 of 20
+A self-tillable image that matches both horizontally and vertically can be regarded topologically as:
+A. A sphere
+B. A Klein bottle
+C. A cube
+--> D. A torus
+
+Question 20 of 20
+To create an isometric tile from a square top-down tile, you would:
+A. Rotate by 50 degrees and scale to a 1:1.5 (x:y) ratio.
+B. Rotate by 40 degrees and sheer.
+C. Rotate by 50 degrees.
+--> D. Rotate by 45 degrees and scale to a 2:1 (x:y) ratio.

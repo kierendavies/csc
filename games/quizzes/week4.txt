@@ -1,0 +1,108 @@
+Question 1 of 20
+following activities are used to give structure to the user-centred design process:
+--> A. ethnographic studies
+--> B. focus groups
+C. crystal therapy
+--> D. play testing
+
+Question 2 of 20
+Paper prototypes encourages rapid prototyping of ideas.
+--> True
+False
+
+Question 3 of 20
+Story Boards can also include a description of game sound effects.
+--> True
+False
+
+Question 4 of 20
+A technical Design Document is typically written by the Game Designer.
+True
+--> False
+
+Question 5 of 20
+Paper prototyping requires
+--> A. people
+--> B. papers and office stationery
+C. a good understanding of software engineering
+
+Question 6 of 20
+Paper prototyping works for all the usual game elements/interactions.
+True
+--> False
+
+Question 7 of 20
+User centred design is an iterative process.
+--> True
+False
+
+Question 8 of 20
+Concept sketches often don't show the final form of objects in the game world.
+--> True
+False
+
+Question 9 of 20
+It is far better to spend more time on design in pre-production, than to race headlong into game development and fix issues that occur then
+--> True
+False
+
+Question 10 of 20
+Which of the following are typical game design artefacts?
+--> A. Story boards
+--> B. Mood Boards
+--> C. Concept Sketches
+D. voice overs
+
+Question 11 of 20
+A State Diagram describes the changing relationships between game world entities.
+--> True
+False
+
+Question 12 of 20
+When collecting user requirements for your game, asking users “what do you really want?” is usually the best place to start.
+True
+--> False
+
+Question 13 of 20
+Regular software engineering methodologies are as applicable to game design.
+True
+--> False
+
+Question 14 of 20
+Story boards help to plan interactions between game characters and the world.
+--> True
+False
+
+Question 15 of 20
+The Concept Pitch is all about explaining the game design – it needn’t address issues such as likely time to completion or financial viability.
+True
+--> False
+
+Question 16 of 20
+Paper prototyping a game only really requires one person.
+True
+--> False
+
+Question 17 of 20
+A game concept pitch typically includes
+--> A. game mechanics
+B. details of the data structures and algorithms that will drive the game
+--> C. selling points for the game
+
+Question 18 of 20
+The GDD may include:
+--> A. look and feel of the game
+--> B. game play/mechanics
+--> C. characters and story
+D. algorithms for game world animations
+
+Question 19 of 20
+User centred design (UCD) incorporates users as ‘co-designers’
+A. only in the initial design phase
+B. only in the evaluation phase
+--> C. throughout the design and evaluation cycle
+
+Question 20 of 20
+The TDD is concerned with all elements of the game – from its design and game play to its’ final implementation.
+True
+--> False

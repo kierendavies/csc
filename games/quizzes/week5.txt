@@ -1,0 +1,131 @@
+Question 1 of 20
+In the average case, acceleration of collision detection improves the complexity of the algorithm ...
+A. from constant time to exponential time.
+B. from linear to constant time.
+--> C. from quadratic to linear.
+D. from exponential time to linear.
+
+Question 2 of 20
+An isometric perspective is a form of parallel projection, which means that relative lengths are not preserved.
+True
+--> False
+
+Question 3 of 20
+In alpha based transparency a value of alpha = 0 maps to fully transparent.
+--> True
+False
+
+Question 4 of 20
+Which of these games does NOT use an isometric viewpoint?
+--> A. Half-life
+B. Diablo
+C. Age of Empires
+D. Sim City
+
+Question 5 of 20
+The depth of a frame buffer is:
+A. The number of pixels vertically
+--> B. The number of bits allocated to a pixel.
+C. The overall number of frame buffers being used.
+D. The number of pixels horizontally
+
+Question 6 of 20
+What is the minimum number of images required to produce an infinite background for a scrolling game?
+--> A. 2
+B. 3
+C. 4
+D. 5
+
+Question 7 of 20
+Which of these is a game design representation?
+A. Paper Prototype
+B. Mood Board
+C. None of the above
+--> D. All of the above
+E. Concept Sketch
+
+Question 8 of 20
+Which of these definitions is incorrect?
+A. Rods and Cones are both types of photoreceptor cells.
+B. The Iris acts to widen or narrow the pupil and control the amount of light entering the eye.
+--> C. The retina is a membrane coating the cornea.
+D. The lens is responsible for focussing light onto the retina
+
+Question 9 of 20
+In low light conditions it is best to view objects that are off axis by:
+--> A. Thirty degrees, in order to exploit the highest density of Rods in the eye.
+B. Fifteen degrees, to align the object with the optic disc.
+C. Zero degrees, in order to exploit the highest density of Cones in the eye.
+
+Question 10 of 20
+Which ordering of bounding shape tests represents the least to most accurate order?
+A. Object-Aligned Bounding Box, Sphere, Axis-Aligned Bounding Box
+B. Object-Aligned Bounding Box, Axis-Aligned Bounding Box, Sphere
+--> C. Sphere, Axis-Aligned Bounding Box, Object-Aligned Bounding Box
+D. Sphere, Object-Aligned Bounding Box, Axis-Aligned Bounding Box
+
+Question 11 of 20
+Which of these is NOT a valid colour space?
+A. HSL
+B. CMY
+--> C. ABC
+D. RGB
+
+Question 12 of 20
+What is the problem with creating isometric tiles by transforming existing top-down 2d tiles?
+A. The resulting tiles cannot have any height.
+B. This method blurs the resulting tiles.
+C. Lighting is not respected.
+--> D. All of the above.
+E. None of the above.
+
+Question 13 of 20
+In order to test whether sprites overlap we use bit masks and perform a bitwise ...
+A. NEGATION
+--> B. AND
+C. XOR
+D. OR
+
+Question 14 of 20
+A vector display sweeps out a picture in horizontal rows, pixel by pixel.
+True
+--> False
+
+Question 15 of 20
+BIT BLIT stands for:
+A. Bilateral Table Lighting
+B. Bit Check by Light Transfer
+--> C. Bit Block Image Transfer
+
+Question 16 of 20
+The K in CMYK stands for:
+A. blacK
+B. Kevin
+C. Kole
+--> D. Key
+
+Question 17 of 20
+Tone mapping can be used for:
+A. Convert between colour spaces.
+B. Create a correspondence between an audio tone and a colour.
+C. Extending the colour gamut of displays.
+--> D. Mapping high dynamic range images to a display.
+
+Question 18 of 20
+Which of these is NOT a typical parameter associated with sprites
+x A. sort order
+B. transparency status
+x C. screen coordinates
+? D. width
+
+Question 19 of 20
+Which of these is a valid solution to the problem of detecting the collision of fast-moving objects?
+A. Smaller time steps.
+B. A temporal bounding box.
+--> C. Both of the above.
+D. None of the above.
+
+Question 20 of 20
+No existing display can match the resolution of human vision.
+True
+--> False
