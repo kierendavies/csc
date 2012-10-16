@@ -189,34 +189,27 @@ public class SurvivalGame extends Game {
                 isPointInBox(new Point2D.Float(d2.x + d2.width, d2.y + d2.height), d);
     }
 
-    private void handleControls(GameInputInterface gii) {
+    private void handlePlayerMovement(GameInputInterface gii) {
         if(gii.keyDown(Config.keyExit)) {
             endGame();
         }
 
-        boolean move = false;
-        float directionToMove = 0;
-
-        float xMove = 0, yMove = 0;
+        Point2D.Float move = new Point2D.Float(0, 0);
 
         if (gii.keyDown(Config.keyUp)) {
-            yMove++;
+            move.y++;
         }
         if (gii.keyDown(Config.keyDown)) {
-            yMove--;
+            move.y--;
         }
         if (gii.keyDown(Config.keyRight)) {
-            xMove++;
+            move.x++;
         }
         if (gii.keyDown(Config.keyLeft)) {
-            xMove--;
+            move.x--;
         }
 
-        if (xMove != 0 || yMove != 0) {
-            player.inputMovement(xMove, yMove);
-        } else {
-
-        }
+        player.inputMovement(move);
 
         if (cooldownTimer <= 0) {
             if (gii.mouseButtonDown(MouseEvent.BUTTON1)) {
@@ -239,12 +232,12 @@ public class SurvivalGame extends Game {
         //----------------------------------
 
         if (alive) {
-            handleControls(gii);
+            handlePlayerMovement(gii);
             player.setDirection(90 + player.getDegreesTo(mousePos));
         }
 
         // NOTE: you must call doTimeStep for ALL game objects once per frame!
-        // updateing step for each object
+        // updating step for each object
         for (int i = 0; i < objects.size(); i++) {
             objects.elementAt(i).doTimeStep();
         }
@@ -268,6 +261,7 @@ public class SurvivalGame extends Game {
         }
 
         //checking each units for collisions
+        Vector<Point2D.Float> playerCollisions = new Vector<Point2D.Float>();
         for (int i = 0; i < objects.size(); i++) {
             GameObject o1 = objects.elementAt(i);
             // check against matches from collisionGrid
@@ -296,27 +290,33 @@ public class SurvivalGame extends Game {
 
                         if (a1 == -1 && a2 == -1) {  // full alpha on both pixels
                             collides = true;
-                            break;
+                            if (o1 instanceof PlayerObject) {
+                                playerCollisions.add(new Point2D.Float(x, y));
+                            } else break;
                         }
                     }
-                    if (collides) break;
+                    if (collides && !(o1 instanceof PlayerObject)) break;
                 }
 
                 if (collides) {
-                    if ((o1 instanceof BulletObject && o2 instanceof WallObject) || o1 instanceof WallObject && o2 instanceof BulletObject) {
-                        // just destroy the bullet, not the wall
-                        if (o1 instanceof BulletObject)
-                            o1.setMarkedForDestruction(true);
-                        else
-                            o2.setMarkedForDestruction(true);
-
+                    if (o1 instanceof BulletObject && o2 instanceof WallObject) {
+                        o1.setMarkedForDestruction(true); // just destroy the bullet, not the wall
+                    } else if (o1 instanceof WallObject && o2 instanceof BulletObject) {
+                        o2.setMarkedForDestruction(true);
                     } else if (o1 instanceof PlayerObject) {
-                        player.revertPosition();
+                        Point2D.Float collisionAverage = new Point2D.Float(0, 0);
+                        int count = 0;
+                        for (Point2D.Float collision : playerCollisions) {
+                            collisionAverage.x += collision.x;
+                            collisionAverage.y += collision.y;
+                            count++;
+                        }
+                        collisionAverage.x /= count;
+                        collisionAverage.y /= count;
+                        player.setCollisionAt(collisionAverage);
                     } else {
                         o1.setMarkedForDestruction(true);
                         o2.setMarkedForDestruction(true);
-
-                        // Note: you can also implement something like o1.reduceHealth(5); if you don't want the object to be immediatly destroyed
                     }
                 }
             }
