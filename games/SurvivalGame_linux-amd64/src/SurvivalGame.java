@@ -171,7 +171,7 @@ public class SurvivalGame extends Game {
 
     private void handlePlayerMovement(GameInputInterface gii) {
         if(gii.keyDown(Config.keyExit)) {
-            endGame();
+            Runner.endGame();
         }
 
         Point2D.Float move = new Point2D.Float(0, 0);

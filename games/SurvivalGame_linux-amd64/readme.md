@@ -1,6 +1,11 @@
 Zarmina
 =======
 
+Menu
+----
+
+The game now features a basic menu which allows starting a new game several times (so long as ESC is pressed and the window isn't closed by other means).
+
 Better movement
 ---------------
 
