@@ -7,7 +7,8 @@ class PlayerObject extends GameObject {
     int numberOfDirectionTextures = 72;
     float direction;
 
-    float maxSpeed = 2;
+    int health;
+    float maxSpeed = 3;
     float accelerationScale = 0.2f;
     float slowDown = 0.95f;
     Point2D.Float velocity = new Point2D.Float(0, 0);
@@ -17,6 +18,7 @@ class PlayerObject extends GameObject {
 
     public PlayerObject(float x, float y) {
         super(x, y);
+        health = 3;
     }
 
     public void setDirection(float direction) {
@@ -85,5 +87,13 @@ class PlayerObject extends GameObject {
             resetCollision();
         }
         incrementPosition(velocity.x, velocity.y);
+    }
+
+    public void damage(int amount) {
+        health -= amount;
+    }
+
+    public int getHealth() {
+        return health;
     }
 }

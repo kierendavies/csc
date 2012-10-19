@@ -3,11 +3,13 @@ import GameEngine.GameFont;
 import GameEngine.GameObject;
 import GameEngine.GameTexture;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.nio.ByteBuffer;
+import java.util.Random;
 import java.util.Vector;
 
 public class SurvivalGame extends Game {
@@ -18,22 +20,22 @@ public class SurvivalGame extends Game {
     private int worldWidth;
     private int worldHeight;
 
-    private boolean alive = true;
-
     // A Collection of GameObjects in the world that will be used with the collision detection system
-    private Vector<GameObject> objects = new Vector<GameObject>();
+    private static Vector<GameObject> objects = new Vector<GameObject>();
     // and it's associated collisionGrid
-    private Grid collisionGrid;
+    private static Grid collisionGrid;
 
     // Grid GameObjects
     private GameObject[][] gridTile;
+
+    private Vector<EnemySpawner> spawners = new Vector<EnemySpawner>();
 
     // The cooldown of the gun (set this to 0 for a cool effect :> )
     private int cooldown = 10;
     private int cooldownTimer = 0;
 
     // Important GameObjects
-    private PlayerObject player; // the player
+    private static PlayerObject player; // the player
 
     //Textures that will be used
     private GameTexture bulletTexture;
@@ -65,69 +67,74 @@ public class SurvivalGame extends Game {
         //Loading up our textures
         GameTexture softRockTexture = loader.loadTexture("Textures/soft_rock.png");
         GameTexture wallTexture = loader.loadTexture("Textures/rock.png");
-        GameTexture floorTexture = loader.loadTexture("Textures/sand_tile.png");
+        //GameTexture floorTexture = loader.loadTexture("Textures/sand_tile.png");
         bulletTexture = loader.loadTexture("Textures/bullet.png");
 
-        int gridSize = 10;
-        worldWidth = gridSize * floorTexture.getWidth();
-        worldHeight = gridSize * floorTexture.getHeight();
+        GameTexture[] floorTextures = new GameTexture[9];
+        for (int i = 0; i < 9; i++) {
+            floorTextures[i] = loader.loadTexture("Textures/floor/sand" + i + ".png");
+        }
+
+        int gridSize = 48;
+        worldWidth = gridSize * floorTextures[0].getWidth();
+        worldHeight = gridSize * floorTextures[0].getHeight();
 
         // creating the grid (with hacky sizing)
-        collisionGrid = new Grid(worldWidth+floorTexture.getWidth(), worldHeight+floorTexture.getWidth(), wallTexture.getWidth(), wallTexture.getHeight());
+        collisionGrid = new Grid(worldWidth+floorTextures[0].getWidth(), worldHeight+floorTextures[0].getWidth(), wallTexture.getWidth(), wallTexture.getHeight());
 
         // creating the floor objects
+        Random prng = new Random();
         gridTile = new GameObject[gridSize][gridSize];
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
-                gridTile[i][j] = new GameObject(floorTexture.getWidth() * i, floorTexture.getHeight() * j);
-                gridTile[i][j].addTexture(floorTexture, 0, 0);
+                gridTile[i][j] = new GameObject(floorTextures[0].getWidth() * i, floorTextures[0].getHeight() * j);
+                gridTile[i][j].addTexture(floorTextures[prng.nextInt(9)], 0, 0);
             }
         }
 
         // Creating wall objects
-        for (int i = 0; i < floorTexture.getWidth() * gridSize; i += wallTexture.getWidth()) {
+        for (int i = 0; i <= worldWidth - wallTexture.getWidth(); i += wallTexture.getWidth()) {
             WallObject go = new WallObject(i, 0);
             go.addTexture(wallTexture, 0, 0);
-            objects.add(go);
-            collisionGrid.add(go);
+            registerObject(go);
 
-            go = new WallObject(i, floorTexture.getHeight() * (gridSize - 1));
+            go = new WallObject(i, worldHeight - wallTexture.getHeight());
             go.addTexture(wallTexture, 0, 0);
-            objects.add(go);
-            collisionGrid.add(go);
+            registerObject(go);
         }
-        for (int i = floorTexture.getHeight(); i < floorTexture.getHeight() * (gridSize - 1); i += wallTexture.getHeight()) {
+        for (int i = wallTexture.getHeight(); i <= worldHeight - wallTexture.getHeight(); i += wallTexture.getHeight()) {
             WallObject go = new WallObject(0, i);
             go.addTexture(wallTexture, 0, 0);
-            objects.add(go);
-            collisionGrid.add(go);
+            registerObject(go);
 
-            go = new WallObject(wallTexture.getWidth() * (gridSize - 1), i);
+            go = new WallObject(worldWidth - wallTexture.getWidth(), i);
             go.addTexture(wallTexture, 0, 0);
-            objects.add(go);
-            collisionGrid.add(go);
+            registerObject(go);
         }
 
         // creating some random rocks to shoot
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 20; i++) {
 
-            float x = (float) ((Math.random() * (gridSize - 4) + 2) * floorTexture.getWidth());
-            float y = (float) ((Math.random() * (gridSize - 4) + 2) * floorTexture.getHeight());
+            float x = (float) (Math.random() * (worldWidth - 2 * wallTexture.getWidth()) + wallTexture.getWidth());
+            float y = (float) (Math.random() * (worldHeight - 2 * wallTexture.getHeight()) + wallTexture.getHeight());
 
             GameObject go = new GameObject(x, y);
             go.addTexture(softRockTexture, 0, 0);
-            objects.add(go);
-            collisionGrid.add(go);
+            registerObject(go);
         }
 
         // Creating the player's ship
         player = new PlayerObject(
-                (float) (floorTexture.getWidth() * gridSize) / 2f,
-                (float) (floorTexture.getHeight() * gridSize) / 2f);
+                (float) worldWidth / 2f,
+                (float) worldHeight / 2f);
 
         for (int i = 0; i < 72; i++) {
             player.addTexture(loader.load("Textures/dude/dude" + i + ".png"), 64, 64);
         }
+
+        Vector<GameTexture> enemyTextures = new Vector<GameTexture>();
+        enemyTextures.add(loader.loadTexture("Textures/rock.png"));
+        spawners.add(new EnemySpawner(100, 100, 100, 0, collisionGrid, enemyTextures));
 
         // don't add player to grid - this is slightly faster because player is so dynamic
         // and it is safe because it is the only object not in the grid
@@ -136,7 +143,6 @@ public class SurvivalGame extends Game {
 
     // this method is used to fire a bullet 
     public void fireBullet() {
-
         cooldownTimer = cooldown;
 
         float dir = 90 + player.getDegreesTo(mousePos);
@@ -169,9 +175,9 @@ public class SurvivalGame extends Game {
                 isPointInBox(new Point2D.Float(d2.x + d2.width, d2.y + d2.height), d);
     }
 
-    private void handlePlayerMovement(GameInputInterface gii) {
+    private void handleInput(GameInputInterface gii) {
         if(gii.keyDown(Config.keyExit)) {
-            Runner.endGame();
+            endGame();
         }
 
         Point2D.Float move = new Point2D.Float(0, 0);
@@ -254,25 +260,29 @@ public class SurvivalGame extends Game {
                 }
 
                 if (collides) {
-                    if (o1 instanceof BulletObject && o2 instanceof WallObject) {
-                        o1.setMarkedForDestruction(true); // just destroy the bullet, not the wall
-                    } else if (o1 instanceof WallObject && o2 instanceof BulletObject) {
-                        o2.setMarkedForDestruction(true);
-                    } else if (o1 instanceof PlayerObject) {
-                        Point2D.Float collisionAverage = new Point2D.Float(0, 0);
-                        int count = 0;
-                        for (Point2D.Float collision : playerCollisions) {
-                            collisionAverage.x += collision.x;
-                            collisionAverage.y += collision.y;
-                            count++;
+                    if (o1 instanceof PlayerObject) {
+                        if (o2 instanceof EnemyObject) {
+                            player.damage(((EnemyObject) o2).getDamage());
+                            o2.setMarkedForDestruction(true);
+                        } else {
+                            Point2D.Float collisionAverage = new Point2D.Float(0, 0);
+                            int count = 0;
+                            for (Point2D.Float collision : playerCollisions) {
+                                collisionAverage.x += collision.x;
+                                collisionAverage.y += collision.y;
+                                count++;
+                            }
+                            collisionAverage.x /= count;
+                            collisionAverage.y /= count;
+                            player.setCollisionAt(collisionAverage);
                         }
-                        collisionAverage.x /= count;
-                        collisionAverage.y /= count;
-                        player.setCollisionAt(collisionAverage);
                     } else {
                         o1.setMarkedForDestruction(true);
                         o2.setMarkedForDestruction(true);
                     }
+                    // don't destroy walls
+                    if (o1 instanceof WallObject) o1.setMarkedForDestruction(false);
+                    if (o2 instanceof WallObject) o2.setMarkedForDestruction(false);
                 }
             }
         }
@@ -281,7 +291,6 @@ public class SurvivalGame extends Game {
         for (int i = 0; i < objects.size(); i++) {
             if (objects.elementAt(i).isMarkedForDestruction()) {
                 if (objects.elementAt(i) == player) {
-                    alive = false;
                     player = null;
                 }
                 // removing object from list of GameObjects
@@ -292,7 +301,14 @@ public class SurvivalGame extends Game {
         }
     }
 
-    //==================================================================================================
+    public static void registerObject(GameObject o) {
+        objects.add(o);
+        collisionGrid.add(o);
+    }
+
+    public static Point2D.Float getPlayerPosition() {
+        return player.getPosition();
+    }
 
     public void logicStep(GameInputInterface gii) {
 
@@ -301,17 +317,21 @@ public class SurvivalGame extends Game {
         mousePos.x = (float) gii.mouseXScreenPosition() - offset.x;
         mousePos.y = (float) gii.mouseYScreenPosition() - offset.y;
 
-        //----------------------------------
 
-        if (alive) {
-            handlePlayerMovement(gii);
-            player.setDirection(90 + player.getDegreesTo(mousePos));
+        if (player.getHealth() <= 0) {
+            endGame();
         }
+
+        handleInput(gii);
+        player.setDirection(90 + player.getDegreesTo(mousePos));
 
         // NOTE: you must call doTimeStep for ALL game objects once per frame!
         // updating step for each object
         for (int i = 0; i < objects.size(); i++) {
             objects.elementAt(i).doTimeStep();
+        }
+        for (int i = 0; i < spawners.size(); i++) {
+            spawners.elementAt(i).doTimeStep();
         }
 
         // setting the camera offset
@@ -365,15 +385,14 @@ public class SurvivalGame extends Game {
             //drawer.draw(arial, "" + player.getDirection(), new Point2D.Float(20, 120), 1.0f, 0.5f, 0.0f, 0.7f, 0.1f);
             drawer.draw(arial, "" + player.getActiveTexture(), new Point2D.Float(20, 120), 1.0f, 0.5f, 0.0f, 0.7f, 0.1f);
         }
-        drawer.draw(arial, "" + mouseWheelTick, new Point2D.Float(20, 68), 1.0f, 0.5f, 0.0f, 0.7f, 0.1f);
+        drawer.draw(arial, "" + player.getHealth(), new Point2D.Float(20, 68), 1.0f, 0.5f, 0.0f, 0.7f, 0.1f);
         drawer.draw(serif, "" + mousePos.x + ":" + mousePos.y, new Point2D.Float(20, 20), 1.0f, 0.5f, 0.0f, 0.7f, 0.1f);
     }
+
+    public void endGame() {
+        // for some inexplicable reason this dialog appears precisely fifteen times
+        if (player.getHealth() <= 0) JOptionPane.showMessageDialog(null, "You have died");
+        super.endGame();
+        System.exit(0);
+    }
 }
-
-
-
-
-
-
-
-

@@ -12,7 +12,7 @@ public class Runner {
     static JTextField widthField;
     static JTextField heightField;
 
-    static JFrame launcher;
+    public static JFrame launcher;
     static JFrame game;
 
     public static void main(String[] args) {
@@ -84,9 +84,5 @@ public class Runner {
 
         // need this so that you don't have to click on the window to gain focus ;)
         glc.requestFocusInWindow();
-    }
-
-    public static void endGame() {
-        game.dispose();
     }
 }
