@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0xf68300" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>GNOME Inform 7</generator>
+  <activeNode nodeId="node-0xf685c0"/>
+  <item nodeId="node-0xf68300">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+
+As an accomplished detective you are able to mentally simulate how the Crowther Engine must have been stolen. You begin by imagining yourself in the role of the thief.
+
+The Crowther Engine Heist
+An Interactive Fiction by Kieren Davies
+Release 1 / Serial number 121022 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Shielded Corridor
+Outside the Laboratories of the Worthy Order of Curmudgeons, the walls are shielded with sonic damping, fire proofing, acid-resistant lacquer, structural supports and storm baffling. (The last a recent addition inspired by Dr Crowther&apos;s experiments). The imposing entrance to the Prime Laboratory is in the south wall.
+
+You can see the Cogway here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf685c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf685c0">
+    <command xml:space="preserve">test me</command>
+    <result xml:space="preserve">&gt;--&gt; No test scripts exist for this game.
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+</Skein>

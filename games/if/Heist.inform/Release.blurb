@@ -1,0 +1,37 @@
+! Blurb file created by Inform build 6G60
+
+status "/usr/share/gnome-inform7/Extensions/Reserved/CblorbModel.html" "/home/kieren/csc/games/if/Heist.inform/Build/StatusCblorb.html"
+
+
+! Identification
+
+project folder "/home/kieren/csc/games/if/Heist.inform"
+release to "/home/kieren/csc/games/if/Heist Materials/Release"
+
+! Blorb instructions
+
+storyfile leafname "The Crowther Engine Heist.zblorb"
+storyfile "/home/kieren/csc/games/if/Heist.inform/Build/output.z8" include
+ifiction "/home/kieren/csc/games/if/Heist.inform/Metadata.iFiction" include
+cover "/usr/share/gnome-inform7/Extensions/Reserved/DefaultCover.jpg"
+picture 1 "/usr/share/gnome-inform7/Extensions/Reserved/DefaultCover.jpg"
+
+! Placeholder variables
+
+placeholder [IFID] = "45C35CB8-1BE2-11E2-9F49-E06995908D0A"
+placeholder [RELEASE] = "1"
+placeholder [YEAR] = "2012"
+placeholder [TITLE] = "The Crowther Engine Heist"
+placeholder [AUTHOR] = "Kieren Davies"
+placeholder [BLURB] = "A work of interactive fiction."
+
+! Other material to release
+
+status alternative ||Using 'Release along with cover art', to provide something more distinctive than the default artwork above&nbsp;<a href=inform:/doc391.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with a website'&nbsp;<a href=inform:/doc393.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with an interpreter', for in-browser play on your website&nbsp;<a href=inform:/doc394.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with the "Such-and-Such" file called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc389.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with the source text'&nbsp;<a href=inform:/doc399.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc398.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with the library card'&nbsp;<a href=inform:/doc399.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with the introductory booklet'&nbsp;<a href=inform:/doc392.html><img border=0 src=inform:/help.png></a>||
