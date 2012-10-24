@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Skein rootNode="node-0xf68300" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0xd7e190" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>GNOME Inform 7</generator>
-  <activeNode nodeId="node-0xf685c0"/>
-  <item nodeId="node-0xf68300">
+  <activeNode nodeId="node-0xf03b30"/>
+  <item nodeId="node-0xd7e190">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
 
@@ -10,14 +10,16 @@
 
 As an accomplished detective you are able to mentally simulate how the Crowther Engine must have been stolen. You begin by imagining yourself in the role of the thief.
 
+The thief would have had to complete his mission before Blitzen Crowther returned to the laboratory at sunrise, 6:00 am.
+
 The Crowther Engine Heist
 An Interactive Fiction by Kieren Davies
-Release 1 / Serial number 121022 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 121025 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Shielded Corridor
-Outside the Laboratories of the Worthy Order of Curmudgeons, the walls are shielded with sonic damping, fire proofing, acid-resistant lacquer, structural supports and storm baffling. (The last a recent addition inspired by Dr Crowther&apos;s experiments). The imposing entrance to the Prime Laboratory is in the south wall.
+Outside the Laboratories of the Worthy Order of Curmudgeons, the walls are shielded with sonic damping, fire proofing, acid-resistant lacquer, structural supports and storm baffling. (The last a recent addition inspired by Dr Crowther&apos;s experiments). The Cogway, the imposing entrance to the Prime Laboratory, is in the south wall.
 
-You can see the Cogway here.
+You can see the Cogway and a Lustrous Key here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -26,15 +28,2614 @@ You can see the Cogway here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0xf685c0"/>
+      <child nodeId="node-0xd7e2f0"/>
+      <child nodeId="node-0xec1890"/>
+      <child nodeId="node-0xec19f0"/>
+      <child nodeId="node-0xf039d0"/>
+      <child nodeId="node-0xf03b30"/>
+      <child nodeId="node-0xf292e0"/>
+      <child nodeId="node-0x7fb2540aa8c0"/>
+      <child nodeId="node-0x7fb24454ace0"/>
+      <child nodeId="node-0x7fb24489acb0"/>
+      <child nodeId="node-0x7fb244b229f0"/>
     </children>
   </item>
-  <item nodeId="node-0xf685c0">
-    <command xml:space="preserve">test me</command>
-    <result xml:space="preserve">&gt;--&gt; No test scripts exist for this game.
+  <item nodeId="node-0xd7e2f0">
+    <command xml:space="preserve">take key</command>
+    <result xml:space="preserve">Taken.
+
+Your pocket watch reads 5:40 am.
+
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7e450"/>
+      <child nodeId="node-0xe9b880"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7e450">
+    <command xml:space="preserve">unlock cogway</command>
+    <result xml:space="preserve">(with Lustrous Key)
+You unlock the Cogway.
+
+Your pocket watch reads 5:41 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7e5b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7e5b0">
+    <command xml:space="preserve">open cogway</command>
+    <result xml:space="preserve">You open the Cogway.
+
+Your pocket watch reads 5:42 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7e710"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7e710">
+    <command xml:space="preserve">go south</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, some Arcane Paraphernalia (closed) and a Storm Globes here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7e870"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7e870">
+    <command xml:space="preserve">go west</command>
+    <result xml:space="preserve">
+Crowther Lab
+The walls of this spherical room are tiled in brass and streaked with soot from Dr Crowther&apos;s lightning experiments, but now it is dominated by the Crowther Engine.
+
+You can see the Crowther Engine (in which is a Punch Card) and a Brass Man here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7e9d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7e9d0">
+    <command xml:space="preserve">take crowther engine</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7eb30"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7eb30">
+    <command xml:space="preserve">go east</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, some Arcane Paraphernalia (closed) and a Storm Globes here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7ec90"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7ec90">
+    <command xml:space="preserve">go south</command>
+    <result xml:space="preserve">
+Launch Platform
+Bleh.
+
+You can see a Tower Wall here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xd7edf0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xd7edf0">
+    <command xml:space="preserve">go up</command>
+    <result xml:space="preserve">
+Balloon Mooring
+You can see a Hot-Air Balloon (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73030"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73030">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Balloon Mooring - room
+    Surrounding Forest - backdrop
+    yourself - person
+        Crowther Engine - open container
+            Punch Card
+        Lustrous Key
+    Hot-Air Balloon - vehicle
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73190"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73190">
+    <command xml:space="preserve">enter hot-air balloon</command>
+    <result xml:space="preserve">You get into the Hot-Air Balloon.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe732f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe732f0">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Balloon Mooring - room
+    Surrounding Forest - backdrop
+    Hot-Air Balloon - vehicle
+        yourself - person
+            Crowther Engine - open container
+                Punch Card
+            Lustrous Key
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73450"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73450">
+    <command xml:space="preserve">leave balloon</command>
+    <result xml:space="preserve">I only understood you as far as wanting to leave.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe735b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe735b0">
+    <command xml:space="preserve">leave hot-air balloon</command>
+    <result xml:space="preserve">I only understood you as far as wanting to leave.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73710"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73710">
+    <command xml:space="preserve">exit hot-air balloon</command>
+    <result xml:space="preserve">I only understood you as far as wanting to exit.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73870"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73870">
+    <command xml:space="preserve">help</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe739d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe739d0">
+    <command xml:space="preserve">fly</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73b30"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73b30">
+    <command xml:space="preserve">drive</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73c90"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73c90">
+    <command xml:space="preserve">ride</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe73df0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe73df0">
+    <command xml:space="preserve">go down</command>
+    <result xml:space="preserve">
+Launch Platform (in the Hot-Air Balloon)
+Bleh.
+
+You can see a Tower Wall here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9b040"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9b040">
+    <command xml:space="preserve">do down</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9b1a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9b1a0">
+    <command xml:space="preserve">go down</command>
+    <result xml:space="preserve">(first opening the Tower Wall)
+It seems to be locked.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9b300"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9b300">
+    <command xml:space="preserve">open</command>
+    <result xml:space="preserve">What do you want to open?
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9b460"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9b460">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9b5c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9b5c0">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Launch Platform - room
+    Surrounding Forest - backdrop
+    Hot-Air Balloon - vehicle
+        yourself - person
+            Crowther Engine - open container
+                Punch Card
+            Lustrous Key
+    Tower Wall - locked door
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9b720"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9b720">
+    <command xml:space="preserve">open tower wall</command>
+    <result xml:space="preserve">It seems to be locked.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xe9b880">
+    <command xml:space="preserve">unlock cogway</command>
+    <result xml:space="preserve">(with Lustrous Key)
+You unlock the Cogway.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9b9e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9b9e0">
+    <command xml:space="preserve">open cogway</command>
+    <result xml:space="preserve">You open the Cogway.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9bb40"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9bb40">
+    <command xml:space="preserve">go south</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, some Arcane Paraphernalia (closed) and a Storm Globes here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9bca0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9bca0">
+    <command xml:space="preserve">take tesla gun</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xe9be00"/>
+    </children>
+  </item>
+  <item nodeId="node-0xe9be00">
+    <command xml:space="preserve">open paraphernalia</command>
+    <result xml:space="preserve">They&apos;re not something you can open.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec1050"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec1050">
+    <command xml:space="preserve">inspect paraphernalia</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec11b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec11b0">
+    <command xml:space="preserve">examinparaphernalia</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec1310"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec1310">
+    <command xml:space="preserve">examine paraphernalia</command>
+    <result xml:space="preserve">The detritus of half a hundred failed experiments. There might be something salvageable in here if your are prepared to risk rummaging.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec1470"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec1470">
+    <command xml:space="preserve">rummage</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec15d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec15d0">
+    <command xml:space="preserve">open paraphernalia</command>
+    <result xml:space="preserve">They&apos;re not something you can open.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec1730"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec1730">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Prime Laboratory - room
+    Cogway - open door
+    yourself - person
+        Lustrous Key
+    Rail - supporter
+        Daedulus Flutter-wing - vehicle
+    Slow Glass
+    Arcane Paraphernalia - closed container
+        *spider-silk rope
+        *perpetual machine
+        *Tesla gun
+    Storm Globes
+* denotes things which are not in scope
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xec1890">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xec19f0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:40 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec1b50"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec1b50">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:41 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec1cb0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec1cb0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:42 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xec1e10"/>
+    </children>
+  </item>
+  <item nodeId="node-0xec1e10">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:43 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9050"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9050">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:44 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee91b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee91b0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:45 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9310"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9310">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:46 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9470"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9470">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:47 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee95d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee95d0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:48 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9730"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9730">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:49 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9890"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9890">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:50 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee99f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee99f0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:51 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9b50"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9b50">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:52 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9cb0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9cb0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:53 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xee9e10"/>
+    </children>
+  </item>
+  <item nodeId="node-0xee9e10">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:54 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf03030"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf03030">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:55 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf03190"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf03190">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:56 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf032f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf032f0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:57 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf03450"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf03450">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:58 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf035b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf035b0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:59 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf03710"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf03710">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 6:00 am.
+
+
+
+    *** The cock crows with the sunrise, and Crowther&apos;s voice approaches as he murmurs to himself. Upon seeing this intruder he quickly pulls an electric weapon from his coat and fires a fatal shot. ***
+
+
+In that game you scored 0 out of a possible 0, in 21 turns.
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf03870"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf03870">
+    <command xml:space="preserve">quit</command>
+    <result xml:space="preserve">
+[ The game has finished ]
+</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xf039d0">
+    <command xml:space="preserve">test correct</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] test sc
+(Testing.)
+
+&gt;[2] take key
+Taken.
+
+Your pocket watch reads 5:40 am.
+
+&gt;[3] unlock cogway
+(with the Lustrous Key)
+You unlock the Cogway.
+
+Your pocket watch reads 5:41 am.
+
+&gt;[4] open cogway
+You open the Cogway.
+
+Your pocket watch reads 5:42 am.
+
+&gt;[5] go south
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, a Storm Globes and some Arcane Paraphernalia (closed) here.
+
+Your pocket watch reads 5:43 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xf03b30">
+    <command xml:space="preserve">test me</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] test main
+(Testing.)
+
+&gt;[2] test sc
+(Testing.)
+
+&gt;[3] take key
+Taken.
+
+Your pocket watch reads 5:30 am.
+
+&gt;[4] unlock cogway with lustrous key
+You unlock the Cogway.
+
+Your pocket watch reads 5:31 am.
+
+&gt;[5] open cogway
+You open the Cogway.
+
+Your pocket watch reads 5:32 am.
+
+&gt;[6] go south
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, a Storm Globes, some Arcane Paraphernalia (closed) and a Beaker (empty) here.
+
+Your pocket watch reads 5:33 am.
+
+&gt;[7] test ci
+(Testing.)
+
+&gt;[8] take storm globes
+Taken.
+
+Your pocket watch reads 5:34 am.
+
+&gt;[9] take beaker
+Taken.
+
+Your pocket watch reads 5:35 am.
+
+&gt;[10] go east
+
+Clockwork Insectarium
+This room is filled with twisted metal and stained glass constructs in a caricature of a jungle environment. Oversized clockwork beetles, worms, butterflies and spiders move sluggishly among the synthetic foliage. A stained glass doorway leads west back to the main laboratory.
+
+You can see the clockwork insects here.
+
+Your pocket watch reads 5:36 am.
+
+&gt;[11] throw storm globes
+A thrown Storm Globe shatters, releasing the electric fury of the storm. The clockwork insects all move faster for a moment, and one of them suddenly explodes in a release of shrapnel.  Some of the thick foliage has been blown away to reveal a pool of water.
+
+Your pocket watch reads 5:37 am.
+
+&gt;[12] take water
+Your pocket watch reads 5:38 am.
+
+&gt;[13] go west
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+Your pocket watch reads 5:39 am.
+
+&gt;[14] test cl
+(Testing.)
+
+&gt;[15] go west
+
+Crowther Lab
+The walls of this spherical room are tiled in brass and streaked with soot from Dr Crowther&apos;s lightning experiments, but now it is dominated by the Crowther Engine.
+
+You can see the Crowther Engine (empty), a Punchcards, a Punch, a Brass Man and a Funnel (empty) here.
+
+Your pocket watch reads 5:40 am.
+
+&gt;[16] drop explanatory note
+Dropped.
+
+Your pocket watch reads 5:41 am.
+
+&gt;[17] take punch
+Your pocket watch reads 5:42 am.
+
+&gt;[18] take punchcards
+With the procedure prepared, it only takes a minute to punch a program to make an automaton do heavy lifting.
+
+Your pocket watch reads 5:43 am.
+
+&gt;[19] put punchcards in crowther engine
+Your pocket watch reads 5:44 am.
+
+&gt;[20] put water in funnel
+(first taking the Water)
+
+Your pocket watch reads 5:45 am.
+
+&gt;[21] switch brass man on
+You switch the Brass Man on.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:46 am.
+
+&gt;[22] go east
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:47 am.
+
+&gt;[23] test redherring
+(Testing.)
+
+&gt;[24] search paraphernalia
+In the Arcane Paraphernalia are a spider-silk rope, perpetual machine, crank handle and Tesla gun.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:48 am.
+
+&gt;[25] take crank handle
+Taken.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:49 am.
+
+&gt;[26] go south
+
+Launch Platform
+This precarious wooden ramp is where Peabody launches his flying machines, usually to Orvell&apos;s detriment. Above is a ladder to a small platform where a hot-air balloon is moored. The tower wall below has a retractable stone staircase down to the ground. Below the tower you can see a donkey cart.
+
+The staircase is retracted and unfortunately the activation mechanism is missing its crank handle.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:50 am.
+
+&gt;[27] unlock tower wall with crank handle
+You unlock the Tower Wall.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:51 am.
+
+&gt;[28] go down
+(first opening the Tower Wall)
+
+Tower Base
+From the ground, the tower looms menacingly overhead.
+
+The staircase is retracted and unfortunately the activation mechanism is missing its crank handle.
+
+You can also see a Donkey Cart (empty) here.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:52 am.
+
+&gt;[29] enter donkey cart
+
+
+    *** The owner of the donkey cart is a local villager scavenging for valuable debris.  A well-placed blow with a rock and the villager foils the heist, completely unwitting of any of the consequences of this action. ***
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <commentary xml:space="preserve"></commentary>
     <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf03c90"/>
+      <child nodeId="node-0x7fb24454ab80"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf03c90">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Balloon Mooring - room
+    Crowther Engine - open container
+        Punchcards
+    Brass Man - device
+    Surrounding Forest - backdrop
+    yourself - person
+        Punch
+        Beaker - open container
+        Lustrous Key
+    Hot-Air Balloon - vehicle
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf03df0"/>
+      <child nodeId="node-0x7fb2540aa4a0"/>
+      <child nodeId="node-0x7fb244304cf0"/>
+      <child nodeId="node-0x7fb244304e50"/>
+      <child nodeId="node-0x7fb24454a080"/>
+      <child nodeId="node-0x7fb24454a600"/>
+      <child nodeId="node-0x7fb24489a5d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf03df0">
+    <command xml:space="preserve">throw key</command>
+    <result xml:space="preserve">Dropped.
+
+Your pocket watch reads 5:44 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb2540aa4a0">
+    <command xml:space="preserve">switch on brass man</command>
+    <result xml:space="preserve">You switch the Brass Man on.
+
+Your pocket watch reads 5:48 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb244304cf0">
+    <command xml:space="preserve">inventory</command>
+    <result xml:space="preserve">You are carrying:
+  a Water
+  a Beaker
+  a Lustrous Key
+
+Your pocket watch reads 5:50 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2443048d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2443048d0">
+    <command xml:space="preserve">examine beaker</command>
+    <result xml:space="preserve">The Beaker is empty.
+
+Your pocket watch reads 5:51 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb244304e50">
+    <command xml:space="preserve">inventoy</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244304a30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244304a30">
+    <command xml:space="preserve">inventory</command>
+    <result xml:space="preserve">You are carrying:
+  a Punch
+  a Beaker
+    some Water
+  a Lustrous Key
+
+Your pocket watch reads 5:55 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24454a080">
+    <command xml:space="preserve">put water in brass man</command>
+    <result xml:space="preserve">That can&apos;t contain things.
+
+Your pocket watch reads 5:55 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24454a1e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24454a1e0">
+    <command xml:space="preserve">take water</command>
+    <result xml:space="preserve">Your pocket watch reads 5:56 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24454a340"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24454a340">
+    <command xml:space="preserve">put water in brass man</command>
+    <result xml:space="preserve">(first taking the Water)
+
+Your pocket watch reads 5:57 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24454a4a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24454a4a0">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Crowther Lab - room
+    yourself - person
+        Punch
+        Beaker - open container
+            Water
+        Lustrous Key
+    Crowther Engine - open container
+        Punchcards
+    Brass Man - device
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24454a600">
+    <command xml:space="preserve">switch brass man on</command>
+    <result xml:space="preserve">You switch the Brass Man on.
+
+on.
+Your pocket watch reads 5:45 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24454a760"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24454a760">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Crowther Lab - room
+    yourself - person
+        Punch
+        Beaker - open container
+        Lustrous Key
+    Crowther Engine - open container
+        Punchcards
+    Brass Man - device
+    Funnel - open container
+        Water
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24489a5d0">
+    <command xml:space="preserve">down</command>
+    <result xml:space="preserve">
+Launch Platform
+This precarious wooden ramp is where Peabody launches his flying machines, usually to Orvell&apos;s detriment. Above is a ladder to a small platform where a hot-air balloon is moored. The tower wall below has a retractable stone staircase down to the ground. Below the tower you can see a donkey cart.
+
+The staircase is retracted and unfortunately the activation mechanism is missing its crank handle.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:50 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24489a730"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24489a730">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:51 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24489a890"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24489a890">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Crowther Lab
+The walls of this spherical room are tiled in brass and streaked with soot from Dr Crowther&apos;s lightning experiments, but now it is dominated by the Crowther Engine.
+
+You can see a Funnel (in which is some Water) here.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:52 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24489a9f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24489a9f0">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Crowther Lab - room
+    Crowther Engine - open container
+        Punchcards
+    Brass Man - device
+    yourself - person
+        Punch
+        Beaker - open container
+        Lustrous Key
+    Funnel - open container
+        Water
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24454ab80">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:50 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24489a050"/>
+      <child nodeId="node-0x7fb24489a310"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24489a050">
+    <command xml:space="preserve">search paraphernalia</command>
+    <result xml:space="preserve">You can&apos;t see inside, since the Arcane Paraphernalia are closed.
+
+on.
+Your pocket watch reads 5:51 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24489a310">
+    <command xml:space="preserve">search</command>
+    <result xml:space="preserve">What do you want to search?
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24489a1b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24489a1b0">
+    <command xml:space="preserve">search paraphernalia</command>
+    <result xml:space="preserve">You can&apos;t see inside, since the Arcane Paraphernalia are closed.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:51 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24489a470"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24489a470">
+    <command xml:space="preserve">open paraphernalia</command>
+    <result xml:space="preserve">You open the Arcane Paraphernalia, revealing a spider-silk rope, perpetual machine, crank handle and Tesla gun.
+
+The Brass Man noisily drags the Crowther Engine along behind you.
+Your pocket watch reads 5:52 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0xf292e0">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Shielded Corridor - room
+    Cogway - locked door
+    yourself - person
+    Lustrous Key
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf29440"/>
+      <child nodeId="node-0x7fb24489ab50"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf29440">
+    <command xml:space="preserve">test me</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] test sc
+(Testing.)
+
+&gt;[2] take key
+Taken.
+
+Your pocket watch reads 5:40 am.
+
+&gt;[3] unlock cogway
+(with the Lustrous Key)
+You unlock the Cogway.
+
+Your pocket watch reads 5:41 am.
+
+&gt;[4] open cogway
+You open the Cogway.
+
+Your pocket watch reads 5:42 am.
+
+&gt;[5] go south
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, a Storm Globes and some Arcane Paraphernalia (closed) here.
+
+Your pocket watch reads 5:43 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf295a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf295a0">
+    <command xml:space="preserve">take storm globe</command>
+    <result xml:space="preserve">I only understood you as far as wanting to take the Storm Globes.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf29700"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf29700">
+    <command xml:space="preserve">take storm globes</command>
+    <result xml:space="preserve">Taken.
+
+Your pocket watch reads 5:44 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf29860"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf29860">
+    <command xml:space="preserve">go w</command>
+    <result xml:space="preserve">
+Crowther Lab
+The walls of this spherical room are tiled in brass and streaked with soot from Dr Crowther&apos;s lightning experiments, but now it is dominated by the Crowther Engine.
+
+You can see the Crowther Engine (empty), a Punch, a Punch Cards and a Brass Man here.
+
+Your pocket watch reads 5:45 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf299c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf299c0">
+    <command xml:space="preserve">go e</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+Your pocket watch reads 5:46 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf29b20"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf29b20">
+    <command xml:space="preserve">go e</command>
+    <result xml:space="preserve">
+Clockwork Insectarium
+This room is filled with twisted metal and stained glass constructs in a caricature of a jungle environment. Oversized clockwork beetles, worms, butterflies and spiders move sluggishly among the synthetic foliage. A stained glass doorway leads west back to the main laboratory.
+
+You can see the clockwork insects here.
+
+Your pocket watch reads 5:47 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf29c80"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf29c80">
+    <command xml:space="preserve">throw globe</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0xf29de0"/>
+    </children>
+  </item>
+  <item nodeId="node-0xf29de0">
+    <command xml:space="preserve">throw globes</command>
+    <result xml:space="preserve">splodes!
+
+Your pocket watch reads 5:48 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aa080"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aa080">
+    <command xml:space="preserve">take globes</command>
+    <result xml:space="preserve">Taken.
+
+Your pocket watch reads 5:49 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aa1e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aa1e0">
+    <command xml:space="preserve">go w</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+Your pocket watch reads 5:50 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aa340"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aa340">
+    <command xml:space="preserve">throw globes</command>
+    <result xml:space="preserve">Your pocket watch reads 5:51 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24489ab50">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.
+
+Your pocket watch reads 5:30 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24489ae10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24489ae10">
+    <command xml:space="preserve">sm</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb2540aa8c0">
+    <command xml:space="preserve">test sc</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] take key
+Taken.
+
+Your pocket watch reads 5:30 am.
+
+&gt;[2] unlock cogway
+(with the Lustrous Key)
+You unlock the Cogway.
+
+Your pocket watch reads 5:31 am.
+
+&gt;[3] open cogway
+You open the Cogway.
+
+Your pocket watch reads 5:32 am.
+
+&gt;[4] go south
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, a Storm Globes, some Arcane Paraphernalia (in which are a spider-silk rope, perpetual machine and Tesla gun) and a Beaker (empty) here.
+
+Your pocket watch reads 5:33 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aa760"/>
+      <child nodeId="node-0x7fb244304770"/>
+      <child nodeId="node-0x7fb244304b90"/>
+      <child nodeId="node-0x7fb24454aa20"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aa760">
+    <command xml:space="preserve">go east</command>
+    <result xml:space="preserve">
+Clockwork Insectarium
+This room is filled with twisted metal and stained glass constructs in a caricature of a jungle environment. Oversized clockwork beetles, worms, butterflies and spiders move sluggishly among the synthetic foliage. A stained glass doorway leads west back to the main laboratory.
+
+You can see the clockwork insects here.
+
+Your pocket watch reads 5:44 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aa600"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aa600">
+    <command xml:space="preserve">take water</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aaa20"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aaa20">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, a Storm Globes, some Arcane Paraphernalia (closed) and a Beaker (empty) here.
+
+Your pocket watch reads 5:45 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aab80"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aab80">
+    <command xml:space="preserve">take storm globes</command>
+    <result xml:space="preserve">Taken.
+
+Your pocket watch reads 5:46 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aace0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aace0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Clockwork Insectarium
+This room is filled with twisted metal and stained glass constructs in a caricature of a jungle environment. Oversized clockwork beetles, worms, butterflies and spiders move sluggishly among the synthetic foliage. A stained glass doorway leads west back to the main laboratory.
+
+You can see the clockwork insects here.
+
+Your pocket watch reads 5:47 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2540aae40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2540aae40">
+    <command xml:space="preserve">throw storm globes</command>
+    <result xml:space="preserve">A thrown Storm Globe shatters, releasing the electric fury of the storm. The clockwork insects all move faster for a moment, and one of them suddenly explodes in a release of shrapnel.  Some of the thick foliage has been blown away to reveal a pool of water.
+
+Your pocket watch reads 5:48 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244304090"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244304090">
+    <command xml:space="preserve">take water</command>
+    <result xml:space="preserve">How do you plan to hold that?
+
+Your pocket watch reads 5:49 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2443041f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2443041f0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, some Arcane Paraphernalia (closed) and a Beaker (empty) here.
+
+Your pocket watch reads 5:50 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244304350"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244304350">
+    <command xml:space="preserve">take beaker</command>
+    <result xml:space="preserve">Taken.
+
+Your pocket watch reads 5:51 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb2443044b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb2443044b0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Clockwork Insectarium
+This room is filled with twisted metal and stained glass constructs in a caricature of a jungle environment. Oversized clockwork beetles, worms, butterflies and spiders move sluggishly among the synthetic foliage. A stained glass doorway leads west back to the main laboratory.
+
+You can see a Water and the clockwork insects here.
+
+Your pocket watch reads 5:52 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244304610"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244304610">
+    <command xml:space="preserve">put water in beaker</command>
+    <result xml:space="preserve">(first taking the Water)
+
+How do you plan to hold that?
+
+Your pocket watch reads 5:53 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb244304770">
+    <command xml:space="preserve">take beaker</command>
+    <result xml:space="preserve">Taken.
+
+Your pocket watch reads 5:44 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb244304b90">
+    <command xml:space="preserve">test ci</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] take storm globes
+Taken.
+
+Your pocket watch reads 5:44 am.
+
+&gt;[2] take beaker
+Taken.
+
+Your pocket watch reads 5:45 am.
+
+&gt;[3] go east
+
+Clockwork Insectarium
+This room is filled with twisted metal and stained glass constructs in a caricature of a jungle environment. Oversized clockwork beetles, worms, butterflies and spiders move sluggishly among the synthetic foliage. A stained glass doorway leads west back to the main laboratory.
+
+You can see the clockwork insects here.
+
+Your pocket watch reads 5:46 am.
+
+&gt;[4] throw storm globes
+A thrown Storm Globe shatters, releasing the electric fury of the storm. The clockwork insects all move faster for a moment, and one of them suddenly explodes in a release of shrapnel.  Some of the thick foliage has been blown away to reveal a pool of water.
+
+Your pocket watch reads 5:47 am.
+
+&gt;[5] take water
+Taken.
+
+Your pocket watch reads 5:48 am.
+
+&gt;[6] go east
+You can&apos;t go that way.
+
+Your pocket watch reads 5:49 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24454aa20">
+    <command xml:space="preserve">search paraphernalia</command>
+    <result xml:space="preserve">In the Arcane Paraphernalia are a spider-silk rope, perpetual machine and Tesla gun.
+
+Your pocket watch reads 5:34 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24454ace0">
+    <command xml:space="preserve">test main</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] test sc
+(Testing.)
+
+&gt;[2] take key
+Taken.
+
+Your pocket watch reads 5:30 am.
+
+&gt;[3] unlock cogway
+(with the Lustrous Key)
+You unlock the Cogway.
+
+Your pocket watch reads 5:31 am.
+
+&gt;[4] open cogway
+You open the Cogway.
+
+Your pocket watch reads 5:32 am.
+
+&gt;[5] go south
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass, a Storm Globes, some Arcane Paraphernalia (closed) and a Beaker (empty) here.
+
+Your pocket watch reads 5:33 am.
+
+&gt;[6] test ci
+(Testing.)
+
+&gt;[7] take storm globes
+Taken.
+
+Your pocket watch reads 5:34 am.
+
+&gt;[8] take beaker
+Taken.
+
+Your pocket watch reads 5:35 am.
+
+&gt;[9] go east
+
+Clockwork Insectarium
+This room is filled with twisted metal and stained glass constructs in a caricature of a jungle environment. Oversized clockwork beetles, worms, butterflies and spiders move sluggishly among the synthetic foliage. A stained glass doorway leads west back to the main laboratory.
+
+You can see the clockwork insects here.
+
+Your pocket watch reads 5:36 am.
+
+&gt;[10] throw storm globes
+A thrown Storm Globe shatters, releasing the electric fury of the storm. The clockwork insects all move faster for a moment, and one of them suddenly explodes in a release of shrapnel.  Some of the thick foliage has been blown away to reveal a pool of water.
+
+Your pocket watch reads 5:37 am.
+
+&gt;[11] take water
+Your pocket watch reads 5:38 am.
+
+&gt;[12] go west
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+Your pocket watch reads 5:39 am.
+
+&gt;[13] test cl
+(Testing.)
+
+&gt;[14] go west
+
+Crowther Lab
+The walls of this spherical room are tiled in brass and streaked with soot from Dr Crowther&apos;s lightning experiments, but now it is dominated by the Crowther Engine.
+
+You can see the Crowther Engine (empty), a Punchcards, a Punch, a Brass Man and a Funnel (empty) here.
+
+Your pocket watch reads 5:40 am.
+
+&gt;[15] drop explanatory note
+You can&apos;t see any such thing.
+
+&gt;[16] take punch
+Your pocket watch reads 5:41 am.
+
+&gt;[17] take punchcards
+With the procedure prepared, it only takes a minute to punch a program to make an automaton do heavy lifting.
+
+Your pocket watch reads 5:42 am.
+
+&gt;[18] put punchcards in crowther engine
+Your pocket watch reads 5:43 am.
+
+&gt;[19] put water in funnel
+(first taking the Water)
+
+Your pocket watch reads 5:44 am.
+
+&gt;[20] switch brass man on
+You switch the Brass Man on.
+
+on.
+Your pocket watch reads 5:45 am.
+
+&gt;[21] go east
+
+Prime Laboratory
+This massive barrel-vaulted chamber is clustered with half a dozen ongoing experiments. Sparks surge between twisted prongs, sulphurous liquids bubble and murmur, and a half-made automaton rocks itself back and forth in the corner. The hair on the back of your neck rises. This could be from the terrible portent of the experiments conducted here over the centuries or it could be from the actinic charge in the air.
+
+Crowther&apos;s Lab is to the west and the Insectarium is to the east. An archway leads south to the flight platform and is also useful for venting in an emergency.
+
+You can see the Cogway, a Rail (on which is a Daedulus Flutter-wing (empty)), the Slow Glass and some Arcane Paraphernalia (closed) here.
+
+on.
+Your pocket watch reads 5:46 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24454ae40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24454ae40">
+    <command xml:space="preserve">search paraphernalia</command>
+    <result xml:space="preserve">You can&apos;t see inside, since the Arcane Paraphernalia are closed.
+
+on.
+Your pocket watch reads 5:47 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb24454a8c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb24454a8c0">
+    <command xml:space="preserve">open paraphernalia</command>
+    <result xml:space="preserve">You open the Arcane Paraphernalia, revealing a spider-silk rope, perpetual machine, crank handle and Tesla gun.
+
+on.
+Your pocket watch reads 5:48 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb24489acb0">
+    <command xml:space="preserve">test donothing</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] wait 30 minutes
+I only understood you as far as wanting to wait.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244b22050"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244b22050">
+    <command xml:space="preserve">wait 30</command>
+    <result xml:space="preserve">I only understood you as far as wanting to wait.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244b221b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244b221b0">
+    <command xml:space="preserve">help wait</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244b22310"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244b22310">
+    <command xml:space="preserve">help</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244b22470"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244b22470">
+    <command xml:space="preserve">wait 2</command>
+    <result xml:space="preserve">I only understood you as far as wanting to wait.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244b225d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244b225d0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:30 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244b22730"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244b22730">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:31 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fb244b22890"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fb244b22890">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+Your pocket watch reads 5:32 am.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fb244b229f0">
+    <command xml:space="preserve">test getcaught</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] wait
+Time passes.
+
+Your pocket watch reads 5:30 am.
+
+&gt;[2] wait
+Time passes.
+
+Your pocket watch reads 5:31 am.
+
+&gt;[3] wait
+Time passes.
+
+Your pocket watch reads 5:32 am.
+
+&gt;[4] wait
+Time passes.
+
+Your pocket watch reads 5:33 am.
+
+&gt;[5] wait
+Time passes.
+
+Your pocket watch reads 5:34 am.
+
+&gt;[6] wait
+Time passes.
+
+Your pocket watch reads 5:35 am.
+
+&gt;[7] wait
+Time passes.
+
+Your pocket watch reads 5:36 am.
+
+&gt;[8] wait
+Time passes.
+
+Your pocket watch reads 5:37 am.
+
+&gt;[9] wait
+Time passes.
+
+Your pocket watch reads 5:38 am.
+
+&gt;[10] wait
+Time passes.
+
+Your pocket watch reads 5:39 am.
+
+&gt;[11] wait
+Time passes.
+
+Your pocket watch reads 5:40 am.
+
+&gt;[12] wait
+Time passes.
+
+Your pocket watch reads 5:41 am.
+
+&gt;[13] wait
+Time passes.
+
+Your pocket watch reads 5:42 am.
+
+&gt;[14] wait
+Time passes.
+
+Your pocket watch reads 5:43 am.
+
+&gt;[15] wait
+Time passes.
+
+Your pocket watch reads 5:44 am.
+
+&gt;[16] wait
+Time passes.
+
+Your pocket watch reads 5:45 am.
+
+&gt;[17] wait
+Time passes.
+
+Your pocket watch reads 5:46 am.
+
+&gt;[18] wait
+Time passes.
+
+Your pocket watch reads 5:47 am.
+
+&gt;[19] wait
+Time passes.
+
+Your pocket watch reads 5:48 am.
+
+&gt;[20] wait
+Time passes.
+
+Your pocket watch reads 5:49 am.
+
+&gt;[21] wait
+Time passes.
+
+Your pocket watch reads 5:50 am.
+
+&gt;[22] wait
+Time passes.
+
+Your pocket watch reads 5:51 am.
+
+&gt;[23] wait
+Time passes.
+
+Your pocket watch reads 5:52 am.
+
+&gt;[24] wait
+Time passes.
+
+Your pocket watch reads 5:53 am.
+
+&gt;[25] wait
+Time passes.
+
+Your pocket watch reads 5:54 am.
+
+&gt;[26] wait
+Time passes.
+
+Your pocket watch reads 5:55 am.
+
+&gt;[27] wait
+Time passes.
+
+Your pocket watch reads 5:56 am.
+
+&gt;[28] wait
+Time passes.
+
+Your pocket watch reads 5:57 am.
+
+&gt;[29] wait
+Time passes.
+
+Your pocket watch reads 5:58 am.
+
+&gt;[30] wait
+Time passes.
+
+Your pocket watch reads 5:59 am.
+
+&gt;[31] wait
+Time passes.
+
+Your pocket watch reads 6:00 am.
+
+
+
+    *** The cock crows with the sunrise, and Crowther&apos;s murmuring voice approaches. He turns the corner and bellows, &quot;You traitor!&quot; He quickly pulls an electric weapon from his coat and fires a fatal shot. ***
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>

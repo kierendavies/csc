@@ -6,7 +6,7 @@ Inform called as: /usr/libexec/gnome-inform7/ni -rules /usr/share/gnome-inform7/
 Phase I ... Lexical analysis
 -----------------------------------------------------
 
-I've now read your source text, which is 909 words long.
+I've now read your source text, which is 1903 words long.
 
 
 -----------------------------------------------------
