@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Image Viewer</string>
+    <string name="banner">Image title here</string>
+    <string name="image_description">Image here</string>
+    <string name="button_play">Play</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_prev">Previous</string>
+    <string name="button_next">Next</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_rotate_left">Rotate left</string>
+    <string name="menu_rotate_right">Rotate right</string>
+    <string name="menu_full_screen">Full screen</string>
+    <string name="menu_browser">Browser</string>
+</resources>

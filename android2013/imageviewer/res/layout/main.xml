@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <ImageView android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/image_description"
+        android:layout_weight="1"
+    />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+    >
+        <ImageButton android:id="@+id/button_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/av_previous"
+            android:background="@android:color/transparent"
+            android:onClick="navPrev"
+        />
+        <ImageButton android:id="@+id/button_play_pause"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/av_play"
+            android:background="@android:color/transparent"
+            android:onClick="navPlayPause"
+        />
+        <ImageButton android:id="@+id/button_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/av_next"
+            android:background="@android:color/transparent"
+            android:onClick="navNext"
+        />
+    </LinearLayout>
+</LinearLayout>
+
