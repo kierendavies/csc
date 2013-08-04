@@ -1,115 +1,151 @@
 package za.co.kierendavies.imageviewer;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.provider.MediaStore;
 import android.view.View;
-import android.widget.*;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ImageViewer extends Activity {
-    public static final int delay = 5000; // milliseconds
-    int[] imageIds = {
-            R.drawable.ts,
-            R.drawable.aj,
-            R.drawable.fs,
-            R.drawable.rd,
-            R.drawable.pp,
-            R.drawable.r,
-    };  // TODO maybe search for image files automatically
-    String[] titles = {
-            "Twilight Sparkle",
-            "Applejack",
-            "Fluttershy",
-            "Rainbow Dash",
-            "Pinkie Pie",
-            "Rarity"
-    };  // TODO generate titles from file names
-    int imageId = 0;
+    public static final int delay = 2000; // slideshow delay, milliseconds
     ImageView imageView;
-    TextView banner;
-    boolean playing = false;
+    TextView titleView;
+    ImageView buttonPlayPause;
+    Cursor imageCursor;
+    boolean isPlaying;
 
+    // handler for automatic slideshow
     Handler handler = new Handler();
     Runnable runnableNext = new Runnable() {
         @Override
         public void run() {
-            navNext(null);
+            // move to next image, or first if it fails
+            if (!imageCursor.moveToNext()) {
+                imageCursor.moveToFirst();
+            }
+            updateImage();
             handler.postDelayed(runnableNext, delay);
         }
     };
 
-    private ShareActionProvider mShareActionProvider;
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle state) {
+        super.onCreate(state);
         setContentView(R.layout.main);
         imageView = (ImageView) findViewById(R.id.image);
-        imageView.setImageResource(imageIds[imageId]);
+        titleView = (TextView) findViewById(R.id.title);
+        buttonPlayPause = (ImageView) findViewById(R.id.button_play_pause);
+
+        isPlaying = false;
+
+        // query for image files on external media
+        imageCursor = getContentResolver().query(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,  // URI
+                new String[] {                                 // these fields
+                        MediaStore.Images.Media._ID,
+                        MediaStore.Images.Media.DATA,
+                        MediaStore.Images.Media.DISPLAY_NAME},
+                null,                                          // all entries
+                null,                                          // no filter
+                MediaStore.Images.Media._ID                    // sort by ID
+        );
+
+        imageCursor.moveToFirst();
+        onRestoreInstanceState(state);
+        // TODO handle no images on device
+        updateImage();
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.options, menu);
-
-        mShareActionProvider = (ShareActionProvider) menu.findItem(R.id.menu_share).getActionProvider();
-        mShareActionProvider.setShareIntent(getDefaultShareIntent());
-
-        getActionBar().setTitle(titles[imageId]);
-
-        return true;
+    protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        // save current image
+        int colId = imageCursor.getColumnIndex(MediaStore.Images.Media._ID);
+        int id = imageCursor.getInt(colId);
+        state.putInt("currentImageId", id);
+        // save isPlaying
+        state.putBoolean("isPlaying", isPlaying);
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // handle fullscreen, rotate, etc.
-        return false;
+    @Override
+    protected void onRestoreInstanceState(Bundle state) {
+        if (state != null) {
+            // search for last viewed image
+            int colId = imageCursor.getColumnIndex(MediaStore.Images.Media._ID);
+            int targetId = state.getInt("currentImageId");
+            while (imageCursor.getInt(colId) != targetId) {
+                // increment, or reset and break if it fails
+                if (!imageCursor.moveToNext()) {
+                    imageCursor.moveToFirst();
+                    break;
+                }
+            }
+            // resume playing if necessary
+            if (state.getBoolean("isPlaying")) {
+                play();
+            } else {
+                pause();
+            }
+        }
     }
 
-    private Intent getDefaultShareIntent() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+    protected void updateImage() {
+        // find and set title
+        int colTitle = imageCursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME);
+        titleView.setText(imageCursor.getString(colTitle));
+
+        // find and set image
+        int colPath = imageCursor.getColumnIndex(MediaStore.Images.Media.DATA);
+        String path = imageCursor.getString(colPath);
+        Bitmap bitmap = BitmapFactory.decodeFile(path);
+        imageView.setImageBitmap(bitmap);
     }
 
+    protected void play() {
+        if (isPlaying) return;  // break if already playing
+        isPlaying = true;
+        handler.postDelayed(runnableNext, delay);
+        buttonPlayPause.setImageResource(android.R.drawable.ic_media_pause);
+    }
+
+    protected void pause() {
+        if (!isPlaying) return;  // break if already paused
+        isPlaying = false;
+        handler.removeCallbacks(runnableNext);
+        buttonPlayPause.setImageResource(android.R.drawable.ic_media_play);
+    }
+
+    // button handler
     public void navPrev(View view) {
-        imageId--;
-        if (imageId < 0) imageId += imageIds.length;  // java does modular arithmetic stupidly
-        imageView.setImageResource(imageIds[imageId]);
-        getActionBar().setTitle(titles[imageId]);
-        if (playing) {
-            // reset the timing
-            handler.removeCallbacks(runnableNext);
-            handler.postDelayed(runnableNext, delay);
+        // move to previous image, or last if it fails
+        if (!imageCursor.moveToPrevious()) {
+            imageCursor.moveToLast();
         }
+        updateImage();
+        pause();
     }
 
+    // button handler
     public void navPlayPause(View view) {
-        ImageButton button = (ImageButton) view;
-        if (playing) {
-            //pause
-            playing = false;
-            handler.removeCallbacks(runnableNext);
-            button.setImageResource(R.drawable.av_pause);
+        if (isPlaying) {
+            pause();
         } else {
-            //play
-            playing = true;
-            System.out.println("scheduling");
-            handler.postDelayed(runnableNext, delay);
-            button.setImageResource(R.drawable.av_play);
+            play();
         }
     }
 
+    // button handler
     public void navNext(View view) {
-        imageId = (imageId + 1) % imageIds.length;
-        imageView.setImageResource(imageIds[imageId]);
-        getActionBar().setTitle(titles[imageId]);
-        if (playing) {
-            // reset the timing
-            handler.removeCallbacks(runnableNext);
-            handler.postDelayed(runnableNext, delay);
+        // move to next image, or first if it fails
+        if (!imageCursor.moveToNext()) {
+            imageCursor.moveToFirst();
         }
+        updateImage();
+        pause();
     }
 }
