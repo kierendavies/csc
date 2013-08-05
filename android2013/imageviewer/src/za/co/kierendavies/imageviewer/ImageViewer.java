@@ -1,12 +1,16 @@
 package za.co.kierendavies.imageviewer;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.view.Display;
+import android.view.Surface;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,7 +40,17 @@ public class ImageViewer extends Activity {
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
-        setContentView(R.layout.main);
+
+        // get orientation and set correct view
+        int orientation = getWindowManager().getDefaultDisplay().getRotation();
+        if (orientation == Surface.ROTATION_90) {
+            setContentView(R.layout.landscape_left);
+        } else if (orientation == Surface.ROTATION_270) {
+            setContentView(R.layout.landscape_right);
+        } else {
+            setContentView(R.layout.portrait);
+        }
+        
         imageView = (ImageView) findViewById(R.id.image);
         titleView = (TextView) findViewById(R.id.title);
         buttonPlayPause = (ImageView) findViewById(R.id.button_play_pause);
