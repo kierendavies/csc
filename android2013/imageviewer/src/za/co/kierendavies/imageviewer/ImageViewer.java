@@ -9,10 +9,9 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.view.Display;
-import android.view.Surface;
-import android.view.View;
+import android.view.*;
 import android.widget.ImageView;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
 public class ImageViewer extends Activity {
@@ -50,7 +49,7 @@ public class ImageViewer extends Activity {
         } else {
             setContentView(R.layout.portrait);
         }
-        
+
         imageView = (ImageView) findViewById(R.id.image);
         titleView = (TextView) findViewById(R.id.title);
         buttonPlayPause = (ImageView) findViewById(R.id.button_play_pause);
@@ -73,6 +72,13 @@ public class ImageViewer extends Activity {
         onRestoreInstanceState(state);
         // TODO handle no images on device
         updateImage();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options, menu);
+        return true;
     }
 
     @Override
@@ -111,7 +117,7 @@ public class ImageViewer extends Activity {
     protected void updateImage() {
         // find and set title
         int colTitle = imageCursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME);
-        titleView.setText(imageCursor.getString(colTitle));
+        getActionBar().setTitle(imageCursor.getString(colTitle));
 
         // find and set image
         int colPath = imageCursor.getColumnIndex(MediaStore.Images.Media.DATA);

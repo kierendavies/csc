@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_full_screen"
+        android:icon="@drawable/av_full_screen"
+        android:title="Fullscreen"
+        android:showAsAction="always"
+    />
+    <item android:id="@+id/menu_browser"
+        android:icon="@drawable/collections_view_as_grid"
+        android:title="Gallery"
+        android:showAsAction="always"
+    />
+    <item android:id="@+id/menu_more"
+        android:icon="@drawable/ic_action_overflow"
+        android:title="More"
+        android:showAsAction="always"
+    />
+    <item android:id="@+id/menu_share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="Share"
+        android:showAsAction="never"
+    />
+    <item android:id="@+id/menu_rotate_left"
+        android:icon="@drawable/images_rotate_left"
+        android:title="Rotate left"
+        android:showAsAction="never"
+    />
+    <item android:id="@+id/menu_rotate_right"
+        android:icon="@drawable/images_rotate_right"
+        android:title="Rotate right"
+        android:showAsAction="never"
+    />
+    <item android:id="@+id/menu_delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="Delete"
+        android:showAsAction="never"
+    />
+</menu>

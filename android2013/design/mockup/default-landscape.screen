@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" xmlns:o="http://wireframesketcher.com/1.0/model/overrides">
+  <widgets xsi:type="model:Master" id="1" x="10" y="10" measuredWidth="844" measuredHeight="430">
+    <screen xsi:type="model:WidgetGroup" href="assets/Android4/Android4.screen#Phone%20Landscape"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="5" x="121" y="67" measuredWidth="597" measuredHeight="46">
+    <screen xsi:type="model:WidgetGroup" href="assets/Android4/Android4.screen#Action%20Bar"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Insert" newIndex="6">
+        <object xsi:type="model:Icon" x="445" y="11" icon="full-screen (medium)"/>
+      </widgetChanges>
+      <widgetChanges xsi:type="o:Delete" ref="690"/>
+      <widgets ref="666" width="597"/>
+      <widgets ref="669" x="50" text="image.jpg"/>
+      <widgets ref="672" x="501">
+        <attributes key="icon" value="table (medium)"/>
+      </widgets>
+      <widgets ref="693" x="557"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Placeholder" id="7" x="120" y="112" width="598" height="291" text="image" measuredWidth="598" measuredHeight="291"/>
+  <widgets xsi:type="model:Icon" id="8" x="658" y="201" measuredWidth="48" measuredHeight="48" icon="play (xlarge)"/>
+  <widgets xsi:type="model:Icon" id="9" x="658" y="129" measuredWidth="48" measuredHeight="48" icon="skip (xlarge)"/>
+  <widgets xsi:type="model:Icon" id="10" x="658" y="273" measuredWidth="48" measuredHeight="48" icon="previous (xlarge)"/>
+  <widgets xsi:type="model:Callout" id="11" x="678" y="320" text="1" measuredWidth="24" measuredHeight="24" annotation="true">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Callout" id="12" x="263" y="101" text="2" measuredWidth="24" measuredHeight="24" annotation="true">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Callout" id="13" x="589" y="101" text="3" measuredWidth="24" measuredHeight="24" annotation="true">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Callout" id="14" x="645" y="101" text="4" measuredWidth="24" measuredHeight="24" annotation="true">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Callout" id="15" x="701" y="101" text="5" measuredWidth="24" measuredHeight="24" annotation="true">
+    <font bold="true"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
