@@ -1,16 +1,18 @@
-public class SumThreaded extends Thread {
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveTask;
+
+@SuppressWarnings("serial")
+public class SumThreaded extends RecursiveTask<Long> {
     static final int CUTOFF = 10000;
 
     long[] arr;
     int hi;
     int lo;
-    long result;
 
     public SumThreaded(long[] arr, int lo, int hi) {
         this.arr = arr;
         this.lo = lo;
         this.hi = hi;
-        this.result = 0;
     }
 
     public SumThreaded(long[] arr) {
@@ -18,24 +20,21 @@ public class SumThreaded extends Thread {
     }
 
     @Override
-    public void run() {
+    public Long compute() {
+        long result = 0;
         if (hi - lo <= CUTOFF) {
             for (int i = lo; i < hi; ++i) {
-                this.result += arr[i];
+                result += arr[i];
             }
         } else {
             // only spawn one child thread; use this thread again for the other half
             SumThreaded child = new SumThreaded(arr, (lo + hi) / 2, hi);
             this.hi = (lo + hi) / 2;
-            child.start();
-            this.run();
-            try {
-                child.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            this.result += child.result;
+            child.fork();
+            result = this.compute();
+            result += child.join();
         }
+        return result;
     }
 
     public static void main(String[] args) {
@@ -45,11 +44,12 @@ public class SumThreaded extends Thread {
         for (int i = 0; i < size; ++i) {
             arr[i] = i + 1;
         }
-        SumThreaded sum = new SumThreaded(arr);
+
+        ForkJoinPool pool = new ForkJoinPool();
         long time = System.nanoTime();
-        sum.run();
+        long result = pool.invoke(new SumThreaded(arr));
         time = System.nanoTime() - time;
-        System.out.println("\tresult = " + sum.result);
+        System.out.println("\tresult = " + result);
         System.out.println("\ttime = " + (time * 1e-9));
     }
 }

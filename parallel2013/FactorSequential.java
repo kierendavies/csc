@@ -1,20 +1,16 @@
 public class FactorSequential {
-
     public static long countFactors(long n) {
-        if (n == 1) return 0;  // code below only works for n > 1
-        long factors = 1;
-        long factor = 2;
-        long count = 0;
-        while (n > 1) {
-            while (n % factor == 0) {
-                n /= factor;
-                ++count;
+        if (n == 1) return 0;
+        long factors = 0;
+        double sqrt = Math.sqrt(n);
+        for (int d = 2; d < sqrt; ++d) {
+            if (n % d == 0) {
+                factors += 2;
             }
-            factors *= count + 1;
-            ++factor;
-            count = 0;
         }
-        factors -= 2;
+        if (sqrt * sqrt == n) {
+            ++factors;
+        }
         return factors;
     }
 
