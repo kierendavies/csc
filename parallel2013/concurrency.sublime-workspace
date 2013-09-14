@@ -1,0 +1,378 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"po",
+				"pony"
+			],
+			[
+				"Ja",
+				"JAVAFLAGS"
+			],
+			[
+				"gam",
+				"GameOfLifeThreaded"
+			],
+			[
+				"JA",
+				"JAVAFLAGS"
+			],
+			[
+				"J",
+				"JAVA"
+			],
+			[
+				"fact",
+				"FactorThreaded"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 904,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "readme.md",
+			"settings":
+			{
+				"buffer_size": 869,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lifeseq.sh",
+			"settings":
+			{
+				"buffer_size": 97,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lifethr.sh",
+			"settings":
+			{
+				"buffer_size": 95,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 72.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remoc",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+				"pace",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 535.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/mnt/windows/Users/kieren/Code/mlpoptim.py",
+		"/home/kieren/Documents/mam3proj/outline.md",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/gosperglidergun.cells",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/wingspaceship.cells",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/wingspaceship.rle",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/wingspaceship_105.lif",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/wingspaceship_106.lif",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/gosperglidergun_105.lif",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/gosperglidergun_106.lif",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/patterns/gosperglidergun.rle",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/benchmark.sh",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/gun.dat",
+		"/mnt/windows/Users/kieren/Code/subword.rb",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/Makefile",
+		"/mnt/windows/Users/kieren/Documents/mam3proj/outline.md",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/SumThreaded.java",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/SumSequential.java",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/concurrency.sublime-project",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/SumThreaded.class",
+		"/mnt/windows/Users/kieren/Code/csc/parallel2013/src/SumThreaded.java",
+		"/home/kieren/.xinitrc",
+		"/home/kieren/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/kieren/Code/csc/android2013/design/full.tex",
+		"/home/kieren/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/kieren/.i3/config",
+		"/home/kieren/Code/csc/android2013/design/overview.md",
+		"/home/kieren/.config/sublime-text-2/Packages/User/Distraction Free.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"args",
+			"JAVAC",
+			"JAVABENCHFLAGS",
+			"JC",
+			" \n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"ARGS",
+			"JC",
+			"JAVAFLAGS",
+			"JAVAC"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Makefile",
+					"settings":
+					{
+						"buffer_size": 904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								866,
+								866
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "readme.md",
+					"settings":
+					{
+						"buffer_size": 869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								621,
+								621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lifeseq.sh",
+					"settings":
+					{
+						"buffer_size": 97,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								97,
+								97
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lifethr.sh",
+					"settings":
+					{
+						"buffer_size": 95,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
