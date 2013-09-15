@@ -4,13 +4,16 @@ JCFLAGS = -g -Xlint -cp .:lanterna-2.1.6.jar:jopt-simple-4.5.jar
 .java.class:
 	$(JC) $(JCFLAGS) $<
 
-SOURCES = SumSequential.java SumThreaded.java \
-	      FactorSequential.java FactorThreaded.java \
-	      GameOfLifeSequential.java GameOfLife.java
+SFSOURCES = SumSequential.java SumThreaded.java \
+	      FactorSequential.java FactorThreaded.java
 
-default: classes
+LIFESOURCES = GameOfLifeSequential.java GameOfLife.java
 
-classes: $(SOURCES:.java=.class)
+default: sf life
+
+sf: $(SFSOURCES:.java=.class)
+
+life: $(LIFESOURCES:.java=.class)
 
 GameOfLifeSequential.class: lanterna-2.1.6.jar jopt-simple-4.5.jar patterns
 GameOfLife.class: lanterna-2.1.6.jar jopt-simple-4.5.jar patterns

@@ -55,11 +55,11 @@ public class FactorThreaded extends RecursiveTask<Long> {
     public static void main(String[] args) {
         int size = Integer.parseInt(args[0]);
         if (args.length >= 2) {
-            FactorThreaded.cutoff = Integer.parseInt(args[1]);
+            cutoff = Integer.parseInt(args[1]);
         } else {
-            FactorThreaded.cutoff = 10000;
+            cutoff = 10000;
         }
-        System.out.println("sum threaded, size = " + size);
+        System.out.println("factor threaded, size = " + size + ", cutoff = " + cutoff);
         long[] arr = new long[size];
         for (int i = 0; i < size; ++i) {
             arr[i] = i + 1;
