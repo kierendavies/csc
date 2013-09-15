@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class GameOfLifeSequential {
-    static final double resizeFactor = 1.5;
+    static final double resizeFactor = Math.sqrt(2);
     int oldLeft, oldTop, oldWidth, oldHeight;
     int newLeft, newTop, newWidth, newHeight;
     boolean[][] oldGrid;
@@ -46,10 +46,6 @@ public class GameOfLifeSequential {
             return false;
         }
         return oldGrid[x - oldLeft][y - oldTop];
-    }
-
-    private void setOldCellLive(int x, int y) {
-        oldGrid[x - oldLeft][y - oldTop] = true;
     }
 
     private void setNewCellLive(int x, int y) {
@@ -94,18 +90,13 @@ public class GameOfLifeSequential {
         }
         width += 2;  // necessary padding
         height += 2;
-        if (width > oldWidth || height > oldHeight) {
-            if (width > oldWidth) {
-                oldWidth = width;
-                newWidth = width;
-            }
-            if (height > oldHeight) {
-                oldHeight = height;
-                newHeight = height;
-            }
-            oldGrid = new boolean[oldWidth][oldHeight];
-            newGrid = new boolean[newWidth][newHeight];
-        }
+
+        oldWidth = width;
+        newWidth = width;
+        oldHeight = height;
+        newHeight = height;
+        oldGrid = new boolean[oldWidth][oldHeight];
+        newGrid = new boolean[newWidth][newHeight];
 
         // assign cells
         reader.reset();
@@ -303,11 +294,11 @@ public class GameOfLifeSequential {
                 screen = TerminalFacade.createScreen();
             }
             screen.startScreen();
-            if (width == 0) width = screen.getTerminal().getTerminalSize().getColumns();
-            if (height == 0) height = screen.getTerminal().getTerminalSize().getRows() - 1;
+//            if (width == 0) width = screen.getTerminal().getTerminalSize().getColumns();
+//            if (height == 0) height = screen.getTerminal().getTerminalSize().getRows() - 1;
         }
 
-        GameOfLifeSequential gol = new GameOfLifeSequential(height, width);
+        GameOfLifeSequential gol = new GameOfLifeSequential(width, height);
 
         if (options.hasArgument("pattern") && !options.has("random")) {
             try {
